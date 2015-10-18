@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 {% load django_markdown %}
 
@@ -6,13 +7,15 @@
 
 {% block content %}
 
-<h1>Goal create</h1>
+<h1>{% trans "Goal create" %}</h1>
 <br/>
+{% blocktrans %}
 <center><u><i>You think:</i></u> I'm lazy to go shopping.</center>
 <center><u><i>You write:</i></u> It's generally tiresome and time-consuming to shop.</center>
 <center>↑</center>
 <center>That's a problem, period.</center>
 <center><font color="grey">Goal definition is implicit.</center>
+{% endblocktrans %}
 <br/>
 {% if need_object %}
 <table class="table">

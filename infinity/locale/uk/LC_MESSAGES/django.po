@@ -1,0 +1,987 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#: infinity/apps/core/forms.py:213 infinity/apps/core/forms.py:216
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-18 11:52-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: infinity/apps/core/forms.py:54 infinity/apps/core/forms.py:86
+#: infinity/apps/core/forms.py:138 infinity/apps/core/forms.py:175
+#: infinity/apps/core/forms.py:332 infinity/apps/core/forms.py:436
+#: infinity/apps/core/forms.py:542 infinity/apps/core/forms.py:631
+#: infinity/apps/core/forms.py:818
+msgid "Create"
+msgstr ""
+
+#: infinity/apps/core/forms.py:66 infinity/apps/core/forms.py:116
+#: infinity/apps/core/forms.py:249 infinity/apps/core/forms.py:291
+#: infinity/apps/core/forms.py:396 infinity/apps/core/forms.py:500
+#: infinity/apps/core/forms.py:595 infinity/apps/core/forms.py:729
+#: infinity/apps/core/forms.py:769 infinity/apps/users/forms.py:54
+msgid "Update"
+msgstr ""
+
+#: infinity/apps/core/forms.py:78
+msgid ""
+"<b>Comment</b> (to claim hours, just\n"
+"                                      enclose a number within curly braces, "
+"e.g.,\n"
+"                                      {1.5} h. You can do it multiple times "
+"in\n"
+"                                      one comment, and use {?1.5} to "
+"indicate\n"
+"                                      estimates."
+msgstr ""
+
+#: infinity/apps/core/forms.py:83
+msgid ""
+"Notify mentioned users (e.g., <i>Hi [User], how are you?</i>) by e-mail."
+msgstr ""
+
+#: infinity/apps/core/forms.py:103 infinity/apps/core/forms.py:133
+msgid "Comment"
+msgstr ""
+
+#: infinity/apps/core/forms.py:104 infinity/apps/core/forms.py:134
+msgid "Notify mentioned users by e-mail."
+msgstr ""
+
+#: infinity/apps/core/forms.py:111 infinity/apps/core/forms.py:200
+#: infinity/apps/core/forms.py:256 infinity/apps/core/forms.py:296
+#: infinity/apps/core/forms.py:337 infinity/apps/core/forms.py:391
+#: infinity/apps/core/forms.py:459 infinity/apps/core/forms.py:505
+#: infinity/apps/core/forms.py:547 infinity/apps/core/forms.py:600
+#: infinity/apps/core/forms.py:636 infinity/apps/core/forms.py:674
+#: infinity/apps/core/forms.py:764 infinity/apps/core/forms.py:813
+msgid "Select the users to share with:"
+msgstr ""
+
+#: infinity/apps/core/forms.py:159
+msgid "Select the type of your need..."
+msgstr ""
+
+#: infinity/apps/core/forms.py:185
+msgid "Select the thing that you need..."
+msgstr ""
+
+#: infinity/apps/core/forms.py:203
+msgid "Share with:"
+msgstr ""
+
+#: infinity/apps/core/forms.py:206
+msgid ""
+"<b>Topic:</b> (relevant to problem,\n"
+"                                      <a href=\"/need-create/\">click here</"
+"a> to\n"
+"                                      add if you can't find it.)"
+msgstr ""
+
+#: infinity/apps/core/forms.py:209
+msgid "<b>Category:</b> (of the problem)"
+msgstr ""
+
+#: infinity/apps/core/forms.py:210
+msgid ""
+"<b>Title:</b> (e.g., Potable Water\n"
+"                                      Shortage, <a href=\"/goal/list/"
+"\">check</a> if the problem is not\n"
+"                                      defined yet.)"
+msgstr ""
+
+#: infinity/apps/core/forms.py:214
+msgid ""
+"<b>Description:</b> (e.g., Many people in the world lack clean potable "
+"water.)"
+msgstr ""
+
+#: infinity/apps/core/forms.py:217 infinity/apps/core/forms.py:352
+#: infinity/apps/core/forms.py:468 infinity/apps/core/forms.py:561
+#: infinity/apps/core/forms.py:870
+msgid ""
+"<b>Personal</b> (makes the entry visible only to a chosen set of people)"
+msgstr ""
+
+#: infinity/apps/core/forms.py:218 infinity/apps/core/forms.py:261
+#: infinity/apps/core/forms.py:301 infinity/apps/core/forms.py:353
+#: infinity/apps/core/forms.py:398 infinity/apps/core/forms.py:469
+#: infinity/apps/core/forms.py:510 infinity/apps/core/forms.py:562
+#: infinity/apps/core/forms.py:605 infinity/apps/core/forms.py:644
+#: infinity/apps/core/forms.py:770 infinity/apps/core/forms.py:871
+msgid "<b>Input Language</b> (the language you used to compose this post) "
+msgstr ""
+
+#: infinity/apps/core/forms.py:219 infinity/apps/core/forms.py:262
+msgid "Hyper equity"
+msgstr ""
+
+#: infinity/apps/core/forms.py:342
+msgid ""
+"<b>Name:</b> (e.g., \"First attempt to assemble solar cells.\", used in "
+"title.)"
+msgstr ""
+
+#: infinity/apps/core/forms.py:343
+msgid "Give a title to your work."
+msgstr ""
+
+#: infinity/apps/core/forms.py:344
+msgid "<b>Description:</b> (details about the work, used as body.)"
+msgstr ""
+
+#: infinity/apps/core/forms.py:345
+msgid "Here is a little story of my work."
+msgstr ""
+
+#: infinity/apps/core/forms.py:346
+msgid "<b>Link:</b> (you can give external link to your work description)"
+msgstr ""
+
+#: infinity/apps/core/forms.py:347 infinity/apps/core/forms.py:349
+msgid "http://"
+msgstr ""
+
+#: infinity/apps/core/forms.py:348
+msgid "<b>File:</b> (you can upload a file describing your work)"
+msgstr ""
+
+#: infinity/apps/core/forms.py:350
+msgid "<b>Parent Work Id:</b> (integer referring to other work)"
+msgstr ""
+
+#: infinity/apps/core/forms.py:351
+msgid "optional"
+msgstr ""
+
+#: infinity/apps/core/forms.py:465
+msgid "<b>Name:</b> (e.g., \"Solar Water Condenser\", used in title.)"
+msgstr ""
+
+#: infinity/apps/core/forms.py:466
+msgid ""
+"<b>Summary:</b> (e.g., \"Use solar panels and Peltier effect to extract "
+"water from air.\", appears as subtitle.)"
+msgstr ""
+
+#: infinity/apps/core/forms.py:467
+msgid "<b>Description:</b> (write full description here, used as body.)"
+msgstr ""
+
+#: infinity/apps/core/forms.py:552
+msgid "<b>Milestone:</b> (e.g., \"assemble solar panels\", used in title.)"
+msgstr ""
+
+#: infinity/apps/core/forms.py:553
+msgid "Type the name of the milestone."
+msgstr ""
+
+#: infinity/apps/core/forms.py:554
+msgid ""
+"<b>Objective:</b> (describe conditions, when you will consider the milestone "
+"to be 'achieved')"
+msgstr ""
+
+#: infinity/apps/core/forms.py:555
+msgid ""
+"Example:\n"
+"\n"
+"We have solar cell assembly, which:\n"
+"- Generates expected electric power output\n"
+"- Passes certain tests of reliability."
+msgstr ""
+
+#: infinity/apps/core/forms.py:556
+msgid ""
+"<b>Priority:</b> (integer, e.g., 1,2,3.. - used for ordering, smaller number "
+"means the milestone has to be done earlier)"
+msgstr ""
+
+#: infinity/apps/core/forms.py:557
+msgid ""
+"<b>Investables:</b> (e.g., enumerate the ranges of quantities you expect to "
+"invest on this milestone in <a href=\"https://github.com/mindey/"
+"IdeaLib#minimal\">IDL syntax</a>, used used for value computation.)"
+msgstr ""
+
+#: infinity/apps/core/forms.py:558
+msgid "people 1\\3, days 10\\20, usd 50\\70"
+msgstr ""
+
+#: infinity/apps/core/forms.py:559
+msgid ""
+"<b>Deliverables:</b> (e.g., enumerate the ranges of quantities you expect to "
+"have by completion of this milestone in <a href=\"https://github.com/mindey/"
+"IdeaLib#minimal\">IDL syntax</a>, used used for value computation.)"
+msgstr ""
+
+#: infinity/apps/core/forms.py:560
+msgid "complete solar assembly drawings 0\\1, solar cell assembly 1\\2"
+msgstr ""
+
+#: infinity/apps/core/forms.py:641
+msgid "<b>Task:</b> (e.g., \"Purchase solar cells\", text in title.)"
+msgstr ""
+
+#: infinity/apps/core/forms.py:642
+msgid "Type the name of the task."
+msgstr ""
+
+#: infinity/apps/core/forms.py:643
+msgid ""
+"<b>Priority:</b> (integer, e.g., 1,2,3.. - used for ordering, smaller number "
+"means the task has to be done earlier)"
+msgstr ""
+
+#: infinity/apps/core/forms.py:699
+msgid "Add & Go"
+msgstr ""
+
+#: infinity/apps/core/forms.py:864
+msgid ""
+"<b>Means:</b> (e.g., \"computer-aided design software, good CAD skills, "
+"electric soldering iron, glue, aluminium solder\", used in title.)"
+msgstr ""
+
+#: infinity/apps/core/forms.py:865
+msgid "Main tools and/or methods you will use, comma-separated."
+msgstr ""
+
+#: infinity/apps/core/forms.py:866
+msgid ""
+"<b>Situation:</b> (Describe your current situation by listing the things "
+"that you have, including access.)"
+msgstr ""
+
+#: infinity/apps/core/forms.py:867
+msgid ""
+"Example:\n"
+"\n"
+"We are two people in a desert. We have:\n"
+"- Computer\n"
+"- Internet connection\n"
+"- Access to postal services\n"
+"- Access to 3D printing services 200 kilos away\n"
+" - A car\n"
+" - 150 USD for this project"
+msgstr ""
+
+#: infinity/apps/core/forms.py:868
+msgid "<b>Deliverable:</b> (Describe what do you expect to get.)"
+msgstr ""
+
+#: infinity/apps/core/forms.py:869
+msgid ""
+"Example:\n"
+"\n"
+"A working prototype of solar water condenser, and high quality open designs "
+"published on GitHub, so others could easily replicate."
+msgstr ""
+
+#: infinity/apps/core/templates/goal/create1.html:10
+msgid "Goal create"
+msgstr ""
+
+#: infinity/apps/core/templates/goal/create1.html:12
+msgid ""
+"\n"
+"<center><u><i>You think:</i></u> I'm lazy to go shopping.</center>\n"
+"<center><u><i>You write:</i></u> It's generally tiresome and time-consuming "
+"to shop.</center>\n"
+"<center>↑</center>\n"
+"<center>That's a problem, period.</center>\n"
+"<center><font color=\"grey\">Goal definition is implicit.</center>\n"
+msgstr ""
+
+#: infinity/apps/core/views.py:202
+msgid "Comment succesfully updated"
+msgstr ""
+
+#: infinity/apps/core/views.py:216
+msgid "Comment succesfully deleted"
+msgstr ""
+
+#: infinity/apps/core/views.py:264
+msgid "Comment succesfully created"
+msgstr ""
+
+#: infinity/apps/core/views.py:284
+msgid "Goal succesfully created"
+msgstr ""
+
+#: infinity/apps/core/views.py:330
+msgid "Goal succesfully deleted"
+msgstr ""
+
+#: infinity/apps/core/views.py:349
+msgid "Goal succesfully updated"
+msgstr ""
+
+#: infinity/apps/core/views.py:363 infinity/apps/core/views.py:526
+#: infinity/apps/core/views.py:678 infinity/apps/core/views.py:829
+#: infinity/apps/core/views.py:974 infinity/apps/core/views.py:1104
+#: infinity/apps/core/views.py:1257
+#, python-format
+msgid "%s succesfully created"
+msgstr ""
+
+#: infinity/apps/core/views.py:454
+msgid "Work succesfully updated"
+msgstr ""
+
+#: infinity/apps/core/views.py:474
+msgid "Work succesfully created"
+msgstr ""
+
+#: infinity/apps/core/views.py:493
+msgid "Work succesfully deleted"
+msgstr ""
+
+#: infinity/apps/core/views.py:596
+msgid "Idea succesfully updated"
+msgstr ""
+
+#: infinity/apps/core/views.py:625
+msgid "Idea succesfully created"
+msgstr ""
+
+#: infinity/apps/core/views.py:647
+msgid "Idea succesfully deleted"
+msgstr ""
+
+#: infinity/apps/core/views.py:751
+msgid "Step succesfully updated"
+msgstr ""
+
+#: infinity/apps/core/views.py:771
+msgid "Step succesfully created"
+msgstr ""
+
+#: infinity/apps/core/views.py:790
+msgid "Step succesfully deleted"
+msgstr ""
+
+#: infinity/apps/core/views.py:901
+msgid "Task succesfully updated"
+msgstr ""
+
+#: infinity/apps/core/views.py:921
+msgid "Task succesfully created"
+msgstr ""
+
+#: infinity/apps/core/views.py:940
+msgid "Task succesfully deleted"
+msgstr ""
+
+#: infinity/apps/core/views.py:1032
+msgid "Need succesfully updated"
+msgstr ""
+
+#: infinity/apps/core/views.py:1076
+msgid "Need succesfully created"
+msgstr ""
+
+#: infinity/apps/core/views.py:1175
+msgid "Plan succesfully updated"
+msgstr ""
+
+#: infinity/apps/core/views.py:1195
+msgid "Plan succesfully created"
+msgstr ""
+
+#: infinity/apps/core/views.py:1225
+msgid "Plan succesfully deleted"
+msgstr ""
+
+#: infinity/apps/core/views.py:1359
+msgid "Translation succesfully updated"
+msgstr ""
+
+#: infinity/apps/core/views.py:1409
+msgid "Translation succesfully deleted"
+msgstr ""
+
+#: infinity/apps/invitation/forms.py:23
+msgid "You can use {{ invitation_url }} tag to past invitation url"
+msgstr ""
+
+#: infinity/apps/invitation/templates/invitation/invite.html:6
+msgid "Invitation"
+msgstr ""
+
+#: infinity/apps/payments/forms.py:22 infinity/apps/payments/forms.py:108
+msgid "Save"
+msgstr ""
+
+#: infinity/apps/payments/forms.py:65 infinity/apps/payments/forms.py:97
+msgid "Send"
+msgstr ""
+
+#: infinity/apps/payments/forms.py:79
+msgid "USD"
+msgstr ""
+
+#: infinity/apps/payments/forms.py:80
+msgid "EUR"
+msgstr ""
+
+#: infinity/apps/payments/views/cryptsy.py:34
+msgid "Coin address succesfully updated"
+msgstr ""
+
+#: infinity/apps/payments/views/cryptsy.py:51
+msgid "CoinAddress succesfully created"
+msgstr ""
+
+#: infinity/apps/payments/views/cryptsy.py:61
+msgid "CoinAddress succesfully deleted"
+msgstr ""
+
+#: infinity/apps/payments/views/cryptsy.py:90
+msgid "Credential succesfully updated"
+msgstr ""
+
+#: infinity/apps/payments/views/cryptsy.py:137
+msgid "Credential succesfully deleted"
+msgstr ""
+
+#: infinity/apps/payments/views/cryptsy.py:164
+msgid "Credential succesfully created"
+msgstr ""
+
+#: infinity/apps/payments/views/cryptsy.py:178
+msgid ""
+"You have not added any credential. Please create a Credential or select "
+"default"
+msgstr ""
+
+#: infinity/apps/users/forms.py:30
+msgid "Send invite"
+msgstr ""
+
+#: infinity/apps/users/forms.py:71
+msgid "Login"
+msgstr ""
+
+#: infinity/apps/users/forms.py:94
+msgid "SignUp"
+msgstr ""
+
+#: infinity/apps/users/views.py:33
+msgid "Invitation to conversation has been sent"
+msgstr ""
+
+#: infinity/apps/users/views.py:62
+msgid "User with this email already exists"
+msgstr ""
+
+#: infinity/apps/users/views.py:66
+msgid "User with this name already exists"
+msgstr ""
+
+#: infinity/apps/users/views.py:221
+msgid "User succesfully updated"
+msgstr ""
+
+#: infinity/settings/base.py:74
+msgid "English"
+msgstr ""
+
+#: infinity/settings/base.py:75
+msgid "Russian"
+msgstr ""
+
+#: infinity/settings/base.py:76
+msgid "Japanese"
+msgstr ""
+
+#: infinity/settings/base.py:77
+msgid "French"
+msgstr ""
+
+#: infinity/settings/base.py:78
+msgid "Chinese"
+msgstr ""
+
+#: infinity/settings/base.py:79
+msgid "German"
+msgstr ""
+
+#: infinity/settings/base.py:80
+msgid "Lithuanian"
+msgstr ""
+
+#: infinity/settings/base.py:81
+msgid "Ukrainian"
+msgstr ""
+
+#: infinity/templates/account/account_inactive.html:5
+#: infinity/templates/account/account_inactive.html:8
+msgid "Account Inactive"
+msgstr ""
+
+#: infinity/templates/account/account_inactive.html:10
+msgid "This account is inactive."
+msgstr ""
+
+#: infinity/templates/account/email.html:7
+msgid "Account"
+msgstr ""
+
+#: infinity/templates/account/email.html:10
+msgid "E-mail Addresses"
+msgstr ""
+
+#: infinity/templates/account/email.html:12
+msgid "The following e-mail addresses are associated with your account:"
+msgstr ""
+
+#: infinity/templates/account/email.html:26
+msgid "Verified"
+msgstr ""
+
+#: infinity/templates/account/email.html:28
+msgid "Unverified"
+msgstr ""
+
+#: infinity/templates/account/email.html:30
+msgid "Primary"
+msgstr ""
+
+#: infinity/templates/account/email.html:36
+msgid "Make Primary"
+msgstr ""
+
+#: infinity/templates/account/email.html:37
+msgid "Re-send Verification"
+msgstr ""
+
+#: infinity/templates/account/email.html:38
+msgid "Remove"
+msgstr ""
+
+#: infinity/templates/account/email.html:45
+msgid "Warning:"
+msgstr ""
+
+#: infinity/templates/account/email.html:45
+msgid ""
+"You currently do not have any e-mail address set up. You should really add "
+"an e-mail address so you can receive notifications, reset your password, etc."
+msgstr ""
+
+#: infinity/templates/account/email.html:50
+msgid "Add E-mail Address"
+msgstr ""
+
+#: infinity/templates/account/email.html:55
+msgid "Add E-mail"
+msgstr ""
+
+#: infinity/templates/account/email.html:64
+msgid "Do you really want to remove the selected e-mail address?"
+msgstr ""
+
+#: infinity/templates/account/email/email_confirmation_message.txt:1
+#, python-format
+msgid ""
+"User %(user_display)s at %(site_name)s has given this as an email address.\n"
+"\n"
+"To confirm this is correct, go to %(activate_url)s\n"
+msgstr ""
+
+#: infinity/templates/account/email/email_confirmation_subject.txt:3
+#: infinity/templates/account/email_confirm.html:7
+#: infinity/templates/account/email_confirm.html:11
+#: infinity/templates/account/email_confirmed.html:6
+#: infinity/templates/account/email_confirmed.html:11
+msgid "Confirm E-mail Address"
+msgstr ""
+
+#: infinity/templates/account/email/password_reset_key_message.txt:1
+#, python-format
+msgid ""
+"You're receiving this e-mail because you or someone else has requested a "
+"password for your user account at %(site_domain)s.\n"
+"It can be safely ignored if you did not request a password reset. Click the "
+"link below to reset your password."
+msgstr ""
+
+#: infinity/templates/account/email/password_reset_key_message.txt:6
+#, python-format
+msgid "In case you forgot, your username is %(username)s."
+msgstr ""
+
+#: infinity/templates/account/email/password_reset_key_message.txt:8
+msgid "Thanks for using our site!"
+msgstr ""
+
+#: infinity/templates/account/email/password_reset_key_subject.txt:3
+msgid "Password Reset E-mail"
+msgstr ""
+
+#: infinity/templates/account/email_confirm.html:17
+#, python-format
+msgid ""
+"Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
+"address for user %(user_display)s."
+msgstr ""
+
+#: infinity/templates/account/email_confirm.html:21
+msgid "Confirm"
+msgstr ""
+
+#: infinity/templates/account/email_confirm.html:28
+#, python-format
+msgid ""
+"This e-mail confirmation link expired or is invalid. Please <a href="
+"\"%(email_url)s\">issue a new e-mail confirmation request</a>."
+msgstr ""
+
+#: infinity/templates/account/email_confirmed.html:15
+#, python-format
+msgid ""
+"You have confirmed that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-"
+"mail address for user %(user_display)s."
+msgstr ""
+
+#: infinity/templates/account/logout.html:6
+#: infinity/templates/account/logout.html:9
+#: infinity/templates/account/logout.html:18
+msgid "Sign Out"
+msgstr ""
+
+#: infinity/templates/account/logout.html:11
+msgid "Are you sure you want to sign out?"
+msgstr ""
+
+#: infinity/templates/account/messages/cannot_delete_primary_email.txt:2
+#, python-format
+msgid "You cannot remove your primary e-mail address (%(email)s)."
+msgstr ""
+
+#: infinity/templates/account/messages/email_confirmation_sent.txt:2
+#, python-format
+msgid "Confirmation e-mail sent to %(email)s."
+msgstr ""
+
+#: infinity/templates/account/messages/email_confirmed.txt:2
+#, python-format
+msgid "You have confirmed %(email)s."
+msgstr ""
+
+#: infinity/templates/account/messages/email_deleted.txt:2
+#, python-format
+msgid "Removed e-mail address %(email)s."
+msgstr ""
+
+#: infinity/templates/account/messages/logged_in.txt:4
+#, python-format
+msgid "Successfully signed in as %(name)s."
+msgstr ""
+
+#: infinity/templates/account/messages/logged_out.txt:2
+msgid "You have signed out."
+msgstr ""
+
+#: infinity/templates/account/messages/password_changed.txt:2
+msgid "Password successfully changed."
+msgstr ""
+
+#: infinity/templates/account/messages/password_set.txt:2
+msgid "Password successfully set."
+msgstr ""
+
+#: infinity/templates/account/messages/primary_email_set.txt:2
+msgid "Primary e-mail address set."
+msgstr ""
+
+#: infinity/templates/account/messages/unverified_primary_email.txt:2
+msgid "Your primary e-mail address must be verified."
+msgstr ""
+
+#: infinity/templates/account/password_change.html:7
+#: infinity/templates/account/password_change.html:10
+#: infinity/templates/account/password_change.html:15
+#: infinity/templates/account/password_reset_from_key.html:6
+#: infinity/templates/account/password_reset_from_key.html:9
+#: infinity/templates/account/password_reset_from_key_done.html:5
+#: infinity/templates/account/password_reset_from_key_done.html:8
+msgid "Change Password"
+msgstr ""
+
+#: infinity/templates/account/password_reset.html:8
+#: infinity/templates/account/password_reset.html:12
+#: infinity/templates/account/password_reset_done.html:6
+#: infinity/templates/account/password_reset_done.html:9
+msgid "Password Reset"
+msgstr ""
+
+#: infinity/templates/account/password_reset.html:17
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll send you "
+"an e-mail allowing you to reset it."
+msgstr ""
+
+#: infinity/templates/account/password_reset.html:22
+msgid "Reset My Password"
+msgstr ""
+
+#: infinity/templates/account/password_reset.html:25
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr ""
+
+#: infinity/templates/account/password_reset_done.html:15
+msgid ""
+"We have sent you an e-mail. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
+
+#: infinity/templates/account/password_reset_from_key.html:9
+msgid "Bad Token"
+msgstr ""
+
+#: infinity/templates/account/password_reset_from_key.html:13
+#, python-format
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
+"a>."
+msgstr ""
+
+#: infinity/templates/account/password_reset_from_key.html:19
+msgid "change password"
+msgstr ""
+
+#: infinity/templates/account/password_reset_from_key.html:22
+#: infinity/templates/account/password_reset_from_key_done.html:9
+msgid "Your password is now changed."
+msgstr ""
+
+#: infinity/templates/account/password_set.html:7
+#: infinity/templates/account/password_set.html:10
+#: infinity/templates/account/password_set.html:15
+msgid "Set Password"
+msgstr ""
+
+#: infinity/templates/account/signup.html:8
+msgid "Signup"
+msgstr ""
+
+#: infinity/templates/account/signup.html:11
+#: infinity/templates/account/signup.html:21
+#: infinity/templates/account/signup_closed.html:9
+msgid "Sign Up"
+msgstr ""
+
+#: infinity/templates/account/signup.html:13
+#, python-format
+msgid ""
+"Already have an account? Then please <a href=\"%(login_url)s\">sign in</a>."
+msgstr ""
+
+#: infinity/templates/account/signup_closed.html:6
+msgid "Sign Up Closed"
+msgstr ""
+
+#: infinity/templates/account/signup_closed.html:11
+msgid "Write an e-mail to <u>forever@infty.xyz</u>. We'll send you an invite."
+msgstr ""
+
+#: infinity/templates/account/snippets/already_logged_in.html:5
+msgid "Note"
+msgstr ""
+
+#: infinity/templates/account/snippets/already_logged_in.html:5
+#, python-format
+msgid "you are already logged in as %(user_display)s."
+msgstr ""
+
+#: infinity/templates/account/verification_sent.html:5
+#: infinity/templates/account/verification_sent.html:8
+#: infinity/templates/account/verified_email_required.html:6
+#: infinity/templates/account/verified_email_required.html:9
+msgid "Verify Your E-mail Address"
+msgstr ""
+
+#: infinity/templates/account/verification_sent.html:10
+msgid ""
+"We have sent an e-mail to you for verification. Follow the link provided to "
+"finalize the signup process. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
+
+#: infinity/templates/account/verified_email_required.html:13
+msgid ""
+"This part of the site requires us to verify that\n"
+"you are who you claim to be. For this purpose, we require that you\n"
+"verify ownership of your e-mail address. "
+msgstr ""
+
+#: infinity/templates/account/verified_email_required.html:17
+msgid ""
+"We have sent an e-mail to you for\n"
+"verification. Please click on the link inside this e-mail. Please\n"
+"contact us if you do not receive it within a few minutes."
+msgstr ""
+
+#: infinity/templates/account/verified_email_required.html:21
+#, python-format
+msgid ""
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
+"mail address</a>."
+msgstr ""
+
+#: infinity/templates/base.html:90 infinity/templates/home.html:27
+msgid "Goals"
+msgstr ""
+
+#: infinity/templates/base.html:94 infinity/templates/home.html:49
+msgid "Ideas"
+msgstr ""
+
+#: infinity/templates/base.html:98 infinity/templates/home.html:69
+msgid "Plans"
+msgstr ""
+
+#: infinity/templates/base.html:103
+msgid "Help"
+msgstr ""
+
+#: infinity/templates/base.html:105
+msgid "About"
+msgstr ""
+
+#: infinity/templates/base.html:111
+msgid "Logout"
+msgstr ""
+
+#: infinity/templates/home.html:16
+msgid "invitations"
+msgstr ""
+
+#: infinity/templates/home.html:16
+msgid "write bugs"
+msgstr ""
+
+#: infinity/templates/home.html:16
+msgid "time value"
+msgstr ""
+
+#: infinity/templates/home.html:18
+msgid "wider index"
+msgstr ""
+
+#: infinity/templates/home.html:27
+msgid "define a problem"
+msgstr ""
+
+#: infinity/templates/home.html:33 infinity/templates/home.html.py:53
+#: infinity/templates/home.html:74 infinity/templates/home.html.py:95
+#: infinity/templates/home.html:116
+msgid "(last commented"
+msgstr ""
+
+#: infinity/templates/home.html:33 infinity/templates/home.html.py:53
+#: infinity/templates/home.html:74 infinity/templates/home.html.py:95
+#: infinity/templates/home.html:116
+msgid "hours ago)"
+msgstr ""
+
+#: infinity/templates/home.html:49
+msgid "suggest a solution"
+msgstr ""
+
+#: infinity/templates/home.html:69
+msgid "start a project"
+msgstr ""
+
+#: infinity/templates/home.html:90
+msgid "Steps"
+msgstr ""
+
+#: infinity/templates/home.html:90
+msgid "break it down"
+msgstr ""
+
+#: infinity/templates/home.html:111
+msgid "Tasks"
+msgstr ""
+
+#: infinity/templates/home.html:111
+msgid "execute it"
+msgstr ""
+
+#: infinity/templates/home.html:132
+msgid "Man is the engine of the progress. People-centric economy."
+msgstr ""
+
+#: infinity/templates/invitations/email/email_invite_message.txt:3
+#, python-format
+msgid ""
+"\n"
+"\n"
+"Hello, \n"
+"\n"
+"You (%(email)s) have been invited to join %(site_name)s\n"
+"\n"
+"If you'd like to join, please go to %(invite_url)s\n"
+"\n"
+msgstr ""
+
+#: infinity/templates/invitations/email/email_invite_subject.txt:3
+#, python-format
+msgid "Invitation to join %(site_name)s "
+msgstr ""
+
+#: infinity/templates/invitations/forms/_invite.html:5
+msgid "Invite"
+msgstr ""
+
+#: infinity/templates/invitations/forms/_invite.html:6
+msgid ""
+"Please add an email below. The user will recieve an email with instructions."
+msgstr ""
+
+#: infinity/templates/invitations/messages/invite_accepted.txt:3
+#, python-format
+msgid "Invitation to - %(email)s - has been accepted"
+msgstr ""
+
+#: infinity/templates/mail/comments/mention_notification.html:5
+msgid "User"
+msgstr ""
+
+#: infinity/templates/mail/comments/mention_notification.html:5
+msgid "has chosen to email their comment:"
+msgstr ""
+
+#: infinity/templates/mail/comments/mention_notification.html:9
+msgid "Reply:"
+msgstr ""
+
+#: infinity/templates/mail/comments/mention_notification_subject.txt:2
+#, python-format
+msgid "Mention notification from %(site_name)s"
+msgstr ""
+
+#: infinity/templates/search_form.html:17
+msgid "Search"
+msgstr ""
+
+#: infinity/templates/search_form.html:18
+msgid "Reset Filter"
+msgstr ""

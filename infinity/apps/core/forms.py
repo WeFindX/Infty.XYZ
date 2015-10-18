@@ -108,7 +108,7 @@ class CommentUpdateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': 'Select the users to share with:',
+                    'placeholder': unicode(_('Select the users to share with:')),
                 }
             ), required=False
         )
@@ -156,7 +156,7 @@ class GoalCreateForm(forms.ModelForm):
         widget=AutoHeavySelect2Widget(
             select2_options={
                 'minimumInputLength': 0,
-                'placeholder': 'Select the type of your need...',
+                'placeholder': unicode(_('Select the type of your need...')),
             }
         ),
         required=False
@@ -182,7 +182,7 @@ class GoalCreateForm(forms.ModelForm):
             widget=AutoHeavySelect2Widget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': 'Select the thing that you need...',
+                    'placeholder': unicode(_('Select the thing that you need...')),
                     'ajax': {
                         'dataType': 'json',
                         'quietMillis': 100,
@@ -197,9 +197,10 @@ class GoalCreateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': 'Select the users to share with:',
+                    'placeholder': unicode(_('Select the users to share with:')),
                 }
-            ), required=False
+            ), required=False,
+            label=_('Share with:')
         )
 
         self.fields['need'].label = _("""<b>Topic:</b> (relevant to problem,
@@ -213,8 +214,9 @@ class GoalCreateForm(forms.ModelForm):
         self.fields['reason'].label = _('<b>Description:</b> (e.g., Many people in the world lack clean potable water.)')
         self.fields['reason'].widget.attrs.update({'placeholder': \
         _('')})
-        self.fields['personal'].label = _('<b>Personal</b> (makes the entry visible only to your mutual friends)')
+        self.fields['personal'].label = _('<b>Personal</b> (makes the entry visible only to a chosen set of people)')
         self.fields['language'].label = _('<b>Input Language</b> (the language you used to compose this post) ')
+        self.fields['hyper_equity'].label = _('Hyper equity')
         self.initial['language'] = 85 # English
 
 
@@ -251,12 +253,13 @@ class GoalUpdateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': 'Select the users to share with:',
+                    'placeholder': unicode(_('Select the users to share with:')),
                 }
             ), required=False
         )
 
         self.fields['language'].label = _('<b>Input Language</b> (the language you used to compose this post) ')
+        self.fields['hyper_equity'].label = _('Hyper equity')
 
     class Meta:
         model = Goal
@@ -290,7 +293,7 @@ class WorkUpdateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': 'Select the users to share with:',
+                    'placeholder': unicode(_('Select the users to share with:')),
                 }
             ), required=False
         )
@@ -331,7 +334,7 @@ class WorkCreateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': 'Select the users to share with:',
+                    'placeholder': unicode(_('Select the users to share with:')),
                 }
             ), required=False
         )
@@ -346,7 +349,7 @@ class WorkCreateForm(forms.ModelForm):
         self.fields['file'].widget.attrs.update({'placeholder': _('http://')})
         self.fields['parent_work_id'].label = _('<b>Parent Work Id:</b> (integer referring to other work)')
         self.fields['parent_work_id'].widget.attrs.update({'placeholder': _('optional')})
-        self.fields['personal'].label = _('<b>Personal</b> (makes the entry visible only to your mutual friends)')
+        self.fields['personal'].label = _('<b>Personal</b> (makes the entry visible only to a chosen set of people)')
         self.fields['language'].label = _('<b>Input Language</b> (the language you used to compose this post) ')
         self.initial['language'] = 85 # English
 
@@ -385,7 +388,7 @@ class IdeaUpdateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': 'Select the users to share with:',
+                    'placeholder': unicode(_('Select the users to share with:')),
                 }
             ), required=False
         )
@@ -453,7 +456,7 @@ class IdeaCreateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': 'Select the users to share with:',
+                    'placeholder': unicode(_('Select the users to share with:')),
                 }
             ), required=False
         )
@@ -462,7 +465,7 @@ class IdeaCreateForm(forms.ModelForm):
         self.fields['name'].label = _('<b>Name:</b> (e.g., "Solar Water Condenser", used in title.)')
         self.fields['summary'].label = _('<b>Summary:</b> (e.g., "Use solar panels and Peltier effect to extract water from air.", appears as subtitle.)')
         self.fields['description'].label = _('<b>Description:</b> (write full description here, used as body.)')
-        self.fields['personal'].label = _('<b>Personal</b> (makes the entry visible only to your mutual friends)')
+        self.fields['personal'].label = _('<b>Personal</b> (makes the entry visible only to a chosen set of people)')
         self.fields['language'].label = _('<b>Input Language</b> (the language you used to compose this post) ')
         self.initial['language'] = 85 # English
 
@@ -499,7 +502,7 @@ class StepUpdateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': 'Select the users to share with:',
+                    'placeholder': unicode(_('Select the users to share with:')),
                 }
             ), required=False
         )
@@ -541,7 +544,7 @@ class StepCreateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': 'Select the users to share with:',
+                    'placeholder': unicode(_('Select the users to share with:')),
                 }
             ), required=False
         )
@@ -555,7 +558,7 @@ class StepCreateForm(forms.ModelForm):
         self.fields['investables'].widget.attrs.update({'placeholder': _('people 1\\3, days 10\\20, usd 50\\70')})
         self.fields['deliverables'].label = _('<b>Deliverables:</b> (e.g., enumerate the ranges of quantities you expect to have by completion of this milestone in <a href="https://github.com/mindey/IdeaLib#minimal">IDL syntax</a>, used used for value computation.)')
         self.fields['deliverables'].widget.attrs.update({'placeholder': _('complete solar assembly drawings 0\\1, solar cell assembly 1\\2')})
-        self.fields['personal'].label = _('<b>Personal</b> (makes the entry visible only to your mutual friends)')
+        self.fields['personal'].label = _('<b>Personal</b> (makes the entry visible only to a chosen set of people)')
         self.fields['language'].label = _('<b>Input Language</b> (the language you used to compose this post) ')
         self.initial['language'] = 85 # English
 
@@ -594,7 +597,7 @@ class TaskUpdateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': 'Select the users to share with:',
+                    'placeholder': unicode(_('Select the users to share with:')),
                 }
             ), required=False
         )
@@ -630,7 +633,7 @@ class TaskCreateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': 'Select the users to share with:',
+                    'placeholder': unicode(_('Select the users to share with:')),
                 }
             ), required=False
         )
@@ -668,7 +671,7 @@ class NeedCreateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': 'Select the users to share with:',
+                    'placeholder': unicode(_('Select the users to share with:')),
                 }
             ), required=False
         )
@@ -758,7 +761,7 @@ class PlanUpdateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': 'Select the users to share with:',
+                    'placeholder': unicode(_('Select the users to share with:')),
                 }
             ), required=False
         )
@@ -807,7 +810,7 @@ class PlanCreateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': 'Select the users to share with:',
+                    'placeholder': unicode(_('Select the users to share with:')),
                 }
             ), required=False
         )
@@ -864,7 +867,7 @@ class PlanCreateForm(forms.ModelForm):
         self.fields['situation'].widget.attrs.update({'placeholder': _("Example:\n\nWe are two people in a desert. We have:\n- Computer\n- Internet connection\n- Access to postal services\n- Access to 3D printing services 200 kilos away\n - A car\n - 150 USD for this project")})
         self.fields['deliverable'].label = _('<b>Deliverable:</b> (Describe what do you expect to get.)')
         self.fields['deliverable'].widget.attrs.update({'placeholder': _("Example:\n\nA working prototype of solar water condenser, and high quality open designs published on GitHub, so others could easily replicate.")})
-        self.fields['personal'].label = _('<b>Personal</b> (makes the entry visible only to your mutual friends)')
+        self.fields['personal'].label = _('<b>Personal</b> (makes the entry visible only to a chosen set of people)')
         self.fields['language'].label = _('<b>Input Language</b> (the language you used to compose this post) ')
         self.initial['language'] = 85 # English
 
