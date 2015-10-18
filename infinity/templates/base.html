@@ -56,6 +56,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
+
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -65,34 +66,49 @@
         </div>
 
         <div class="collapse navbar-collapse">
+        {% load i18n %}
+        <form class="navbar-form navbar-right" action="{% url 'set_language' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <input class="form-control" name="next" type="hidden" value="{{ redirect_to }}" />
+                <select class="form-control" onchange="$(this).closest('form').submit();" name="language">
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                    <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+                    {{ language.name_local }} ({{ language.code }})
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+        </form>
           <ul class="nav navbar-nav">
 
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="{% url "goal-list" %}">Goals</a>
+              <a href="{% url "goal-list" %}">{% trans "Goals" %}</a>
                 <a href="{% url "goal-create" %}"><i class="fa fa-plus-circle"></a></i></a>
               </li>
               <li>
-                <a href="{% url "idea-list" %}">Ideas</a>
+              <a href="{% url "idea-list" %}">{% trans "Ideas" %}</a>
                 <a href="{% url "idea-create" %}"><i class="fa fa-plus-circle"></a></i></a>
               </li>
               <li>
-                <a href="{% url "plan-list" %}">Plans</a>
+              <a href="{% url "plan-list" %}">{% trans "Plans" %}</a>
                 <a href="{% url "plan-create" %}"><i class="fa fa-plus-circle"></a></i></a>
               </li>
               <li>
               {% if request.user.is_authenticated %}
-              <a href="{% url "help" %}"><b>Help</b></a>
+              <a href="{% url "help" %}"><b>{% trans "Help" %}</b></a>
               {% else %}
-              <a href="{% url "about" %}"><b>About</b></a>
+              <a href="{% url "about" %}"><b>{% trans "About" %}</b></a>
               {% endif %}
               </li>
 
               {% if request.user.is_authenticated %}
               <li>
-              <a href="{% url "account_logout" %}"><b>Logout</b></a>
+              <a href="{% url "account_logout" %}"><b>{% trans "Logout" %}</b></a>
               </li>
               <li>
               <a href="{% url "user-detail" request.user.username %}"><b>[{{ request.user }}]</b></a>

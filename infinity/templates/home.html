@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% load django_markdown %}
 
@@ -12,9 +13,9 @@
     width: 100%;
 }
 </style>
-{% if user.is_anonymous %}{% else %}<div class="alignright">{% if user.invitationoption.invitations_left %}<b>[<a href="{% url "invite:send"  %}">{{user.invitationoption.invitations_left}} invitations</a>, <a href="/step/2/detail/">write bugs</a>, time value: 1 ħ = <a href="https://research.stlouisfed.org/fred2/series/CES0500000003">{{ hour_value.value|floatformat:2 }}</a>]</b>{% endif %}</div>
+{% if user.is_anonymous %}{% else %}<div class="alignright">{% if user.invitationoption.invitations_left %}<b>[<a href="{% url "invite:send"  %}">{{user.invitationoption.invitations_left}} {% trans "invitations" %}</a>, <a href="/step/2/detail/">{% trans "write bugs" %}</a>, {% trans "time value" %}: 1 ħ = <a href="https://research.stlouisfed.org/fred2/series/CES0500000003">{{ hour_value.value|floatformat:2 }}</a> $]</b>{% endif %}</div>
 {% endif %}
-<div class="alignleft">{% if user.is_anonymous %}{% else %}<b>[{% if request.resolver_match.url_name == 'wider' %}<a href="{% url "home" %}">my index</a>{% else %}<a href="{% url "wider" %}">wider index</a>{% endif %}]</b>{% endif %} <!--<input autocomplete="off" tabindex="-1" type="url" aria-hidden="true" size="35" disabled><input type="submit" value="lookup" style="color: GrayText;" disabled>--></div>
+<div class="alignleft">{% if user.is_anonymous %}{% else %}<b>[{% if request.resolver_match.url_name == 'wider' %}<a href="{% url "home" %}">my index</a>{% else %}<a href="{% url "wider" %}">{% trans "wider index" %}</a>{% endif %}]</b>{% endif %} <!--<input autocomplete="off" tabindex="-1" type="url" aria-hidden="true" size="35" disabled><input type="submit" value="lookup" style="color: GrayText;" disabled>--></div>
 <div style="clear:both;">
 <br/>
 
@@ -23,13 +24,13 @@
 <div class="row row-horizon">
 
 <div class="panel panel-default col-md-4 block-content">
-    <div class="panel-heading"><a href="{% url "goal-list" %}">Goals</a>&nbsp; <a href="{% url "goal-create" %}"><i class="fa fa-plus-circle"></a></i></a>&nbsp; - <b>define a problem</b>
+    <div class="panel-heading"><a href="{% url "goal-list" %}">{% trans "Goals" %}</a>&nbsp; <a href="{% url "goal-create" %}"><i class="fa fa-plus-circle"></a></i></a>&nbsp; - <b>{% trans "define a problem" %}</b>
     
     <div style="display:inline-block; float: right;"><form method="post" style="display:inline;">{% csrf_token %}<select name="goals" onchange="this.form.submit()">{% for value in dropdown_list %}<option value="{{ value }}" {% if items.goals == value %}selected{% endif %}>{{ value }}</option>{% endfor %}</select></form></div></div>
     <div class="panel-body">
     {% if goal_list %}
 
-    <p align="center"><i>(last commented {{ goal_hours }} hours ago)</i></p>
+    <p align="center"><i>{% trans "(last commented" %} {{ goal_hours }} {% trans "hours ago)" %}</i></p>
     {% for goal in goal_list %}
     <b>{% if goal.0.personal %}<i class="fa {% if goal.0.user == request.user %}fa-lock{% else %}fa-flag{% endif %}"></i>{% endif %} $ {{ goal.0.get_usd|floatformat:2 }}/{{ goal.0.get_remain_usd|floatformat:2 }} </b> {% if goal.1 %}<b>{% endif %}<a href="{% url "goal-detail" goal.0.pk %}#{{goal.0.commented_at|date:"U"}}">{{ goal.0.name }}</a>{% if goal.1 %}</b>{% endif %} (<a href="{% url "goal-detail" goal.0.pk %}#{{goal.0.commented_at|date:"U"}}">{{goal.0.comment_count}} comments</a>)<br/><p>{{goal.0.reason|markdown|truncatewords_html:34}}</p>
     {% endfor %}
@@ -45,11 +46,11 @@
 </div>
 
 <div class="panel panel-default col-md-4 block-content">
-    <div class="panel-heading"><a href="{% url "idea-list" %}">Ideas</a>&nbsp;<a href="{% url "idea-create" %}"><i class="fa fa-plus-circle"></a></i></a>&nbsp; - <b>suggest a solution</b><div style="display:inline-block; float: right;"><form method="post" style="display:inline;">{% csrf_token %}<select name="ideas" onchange="this.form.submit()">{% for value in dropdown_list %}<option value="{{ value }}" {% if items.ideas == value %}selected{% endif %}>{{ value }}</option>{% endfor %}</select></form></div></div>
+    <div class="panel-heading"><a href="{% url "idea-list" %}">{% trans "Ideas" %}</a>&nbsp;<a href="{% url "idea-create" %}"><i class="fa fa-plus-circle"></a></i></a>&nbsp; - <b>{% trans "suggest a solution" %}</b><div style="display:inline-block; float: right;"><form method="post" style="display:inline;">{% csrf_token %}<select name="ideas" onchange="this.form.submit()">{% for value in dropdown_list %}<option value="{{ value }}" {% if items.ideas == value %}selected{% endif %}>{{ value }}</option>{% endfor %}</select></form></div></div>
     <div class="panel-body">
     {% if idea_list %}
 
-    <p align="center"><i>(last commented {{ idea_hours }} hours ago)</i></p>
+    <p align="center"><i>{% trans "(last commented" %} {{ idea_hours }} {% trans "hours ago)" %}</i></p>
     {% for idea in idea_list %}
     <b>{% if idea.0.personal %}<i class="fa {% if idea.0.user == request.user %}fa-lock{% else %}fa-flag{% endif %}"></i>{% endif %} $ {{ idea.0.get_usd|floatformat:2 }}/{{ idea.0.get_remain_usd|floatformat:2 }} </b> {% if idea.1 %}<b>{% endif %}<a href="{% url "idea-detail" idea.0.pk %}#{{idea.0.commented_at|date:"U"}}">{{ idea.0.name }}</a>{% if idea.1 %}</b>{% endif %} (<a href="{% url "idea-detail" idea.0.pk %}#{{idea.0.commented_at|date:"U"}}">{{idea.0.comment_count}} comments</a>)<br/><p>{{idea.0.description|markdown|truncatewords_html:34}}</p>
     {% endfor %}
@@ -65,12 +66,12 @@
 
 <div class="panel panel-default col-md-4 block-content">
     <div class="panel-heading">
-        <a href="{% url "plan-list" %}">Plans</a>&nbsp;<a href="{% url "plan-create" %}"><i class="fa fa-plus-circle"></a></i></a>&nbsp; - <b>start a project</b> <div style="display:inline-block; float: right;"><form method="post" style="display:inline;">{% csrf_token %}<select name="plans" onchange="this.form.submit()">{% for value in dropdown_list %}<option value="{{ value }}" {% if items.plans == value %}selected{% endif %}>{{ value }}</option>{% endfor %}</select></form></div>
+        <a href="{% url "plan-list" %}">{% trans "Plans" %}</a>&nbsp;<a href="{% url "plan-create" %}"><i class="fa fa-plus-circle"></a></i></a>&nbsp; - <b>{% trans "start a project" %}</b> <div style="display:inline-block; float: right;"><form method="post" style="display:inline;">{% csrf_token %}<select name="plans" onchange="this.form.submit()">{% for value in dropdown_list %}<option value="{{ value }}" {% if items.plans == value %}selected{% endif %}>{{ value }}</option>{% endfor %}</select></form></div>
     </div>
     <div class="panel-body">
     {% if plan_list %}
 
-    <p align="center"><i>(last commented {{ plan_hours }} hours ago)</i></p>
+    <p align="center"><i>{% trans "(last commented" %} {{ plan_hours }} {% trans "hours ago)" %}</i></p>
     {% for plan in plan_list %}
     <b>{% if plan.0.personal %}<i class="fa {% if plan.0.user == request.user %}fa-lock{% else %}fa-flag{% endif %}"></i>{% endif %} $ {{ plan.0.get_usd|floatformat:2 }}/{{ plan.0.get_remain_usd|floatformat:2 }} </b> {% if plan.1 %}<b>{% endif %}<a href="{% url "plan-detail" plan.0.pk %}#{{plan.0.commented_at|date:"U"}}">{{ plan.0.name }}</a>{% if plan.1 %}</b>{% endif %} (<a href="{% url "plan-detail" plan.0.pk %}#{{plan.0.commented_at|date:"U"}}">{{plan.0.comment_count}} comments</a>)<br/><p>{{plan.0.situation|markdown|truncatewords_html:34}}</p>
     {% endfor %}
@@ -86,12 +87,12 @@
 
 <div class="panel panel-default col-md-4 block-content">
     <div class="panel-heading">
-        <a href="{% url "step-list" %}">Steps</a>&nbsp;<i class="fa fa-minus-square-o"></i>&nbsp; - <b>break it down</b><div style="display:inline-block; float: right;"> <form method="post" style="display:inline;">{% csrf_token %}<select name="steps" onchange="this.form.submit()">{% for value in dropdown_list %}<option value="{{ value }}" {% if items.steps == value %}selected{% endif %}>{{ value }}</option>{% endfor %}</select></form></div>
+        <a href="{% url "step-list" %}">{% trans "Steps" %}</a>&nbsp;<i class="fa fa-minus-square-o"></i>&nbsp; - <b>{% trans "break it down" %}</b><div style="display:inline-block; float: right;"> <form method="post" style="display:inline;">{% csrf_token %}<select name="steps" onchange="this.form.submit()">{% for value in dropdown_list %}<option value="{{ value }}" {% if items.steps == value %}selected{% endif %}>{{ value }}</option>{% endfor %}</select></form></div>
     </div>
     <div class="panel-body">
     {% if step_list %}
 
-    <p align="center"><i>(last commented {{ step_hours }} hours ago)</i></p>
+    <p align="center"><i>{% trans "(last commented" %} {{ step_hours }} {% trans "hours ago)" %}</i></p>
     {% for step in step_list %}
     <b>{% if step.0.personal %}<i class="fa {% if step.0.user == request.user %}fa-lock{% else %}fa-flag{% endif %}"></i>{% endif %} $ {{ step.0.get_usd|floatformat:2 }}/{{ step.0.get_remain_usd|floatformat:2 }} </b> {% if step.1 %}<b>{% endif %}<a href="{% url "step-detail" step.0.pk %}#{{step.0.commented_at|date:"U"}}">{{ step.0.name }}</a>{% if step.1 %}</b>{% endif %} (<a href="{% url "step-detail" step.0.pk %}#{{step.0.commented_at|date:"U"}}">{{step.0.comment_count}} comments</a>)<br/><p>{{step.objective|markdown|truncatewords_html:34}}</p>
     {% endfor %}
@@ -107,12 +108,12 @@
 
 <div class="panel panel-default col-md-4 block-content">
     <div class="panel-heading">
-        <a href="{% url "task-list" %}">Tasks</a>&nbsp;<i class="fa fa-minus-square-o"></i>&nbsp; - <b>execute it</b><div style="display:inline-block; float: right;"><form method="post" style="display:inline;">{% csrf_token %}<select name="tasks" onchange="this.form.submit()">{% for value in dropdown_list %}<option value="{{ value }}" {% if items.tasks == value %}selected{% endif %}>{{ value }}</option>{% endfor %}</select></form></div>
+        <a href="{% url "task-list" %}">{% trans "Tasks" %}</a>&nbsp;<i class="fa fa-minus-square-o"></i>&nbsp; - <b>{% trans "execute it" %}</b><div style="display:inline-block; float: right;"><form method="post" style="display:inline;">{% csrf_token %}<select name="tasks" onchange="this.form.submit()">{% for value in dropdown_list %}<option value="{{ value }}" {% if items.tasks == value %}selected{% endif %}>{{ value }}</option>{% endfor %}</select></form></div>
     </div>
 
     <div class="panel-body">
     {% if task_list %}
-    <p align="center"><i>(last commented {{ task_hours }} hours ago)</i></p>
+    <p align="center"><i>{% trans "(last commented" %} {{ task_hours }} {% trans "hours ago)" %}</i></p>
     {% for task in task_list %}
     <b>{% if task.0.personal %}<i class="fa {% if task.0.user == request.user %}fa-lock{% else %}fa-flag{% endif %}"></i>{% endif %} $ {{ task.0.get_usd|floatformat:2 }}/{{ task.0.get_remain_usd|floatformat:2 }} </b> {% if task.1 %}<b>{% endif %}<a href="{% url "task-detail" task.0.pk %}#{{task.0.commented_at|date:"U"}}">{{ task.0.name }}</a>{% if task.1 %}</b>{% endif %} (<a href="{% url "task-detail" task.0.pk %}#{{task.0.commented_at|date:"U"}}">{{task.0.comment_count}} comments</a>)
     <br>
@@ -128,4 +129,5 @@
 </div>
 
 </div>
+<div align="center">{% trans "Man is the engine of the progress. People-centric economy." %}</div>
 {% endblock content %}

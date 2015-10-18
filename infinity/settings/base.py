@@ -69,6 +69,23 @@ SITE_ID = 1
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#use-i18n
 USE_I18N = True
 
+from django.utils.translation import ugettext_lazy as _
+LANGUAGES = (
+    ('en', _('English')),
+    ('ru', _('Russian')),
+    ('ja', _('Japanese')),
+    ('fr', _('French')),
+    ('zh-cn', _('Chinese')),
+    ('de', _('German')),
+    ('lt', _('Lithuanian')),
+    ('uk', _('Ukrainian'))
+)
+
+import os
+LOCALE_PATHS = (
+    os.path.join(DJANGO_ROOT, 'locale'),
+)
+
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#use-l10n
 USE_L10N = False
 
@@ -170,6 +187,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 )
 # END MIDDLEWARE CONFIGURATION
 

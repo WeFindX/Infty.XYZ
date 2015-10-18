@@ -36,6 +36,8 @@ class AuthTestMixin(object):
         )
 
     def login(self, login, password):
+        # TODO: need to fix this test
+        # for languages
         resp = self.app.get(reverse('account_login'))
         form = resp.forms[0]
         form['login'] = login
