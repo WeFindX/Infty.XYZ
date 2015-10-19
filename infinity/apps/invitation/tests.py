@@ -66,8 +66,6 @@ class InvitationTest(WebTest):
             mail.outbox[0].body.find(form_response.context['invitation_url'])
         )
 
-        self.assertTrue(False)
-
     def test_already_invited_user(self):
         invitation_form_view_url = reverse('invite:send')
 
