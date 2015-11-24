@@ -9,6 +9,7 @@ from django.contrib import messages
 from django.http import HttpResponseForbidden
 from django.contrib.auth import get_user_model
 from django.core.urlresolvers import reverse
+from django.utils.translation import ugettext_lazy as _
 
 from ..systems import PayPal
 from ..systems import PayPalException
@@ -100,8 +101,15 @@ class PayPalTransactionSuccessView(View):
                 paymentExecStatus=PayPalTransaction.CREATED,
                 sender_user=self.request.user
         ):
-            paymentExecStatus = paypal.get_payment_information(
-                transaction.payKey)['status'][0]
+            paypal_payment_instance = paypal.get_payment_information(transaction.payKey)
+            paymentExecStatus = paypal_payment_instance.get('status', False)
+
+            if paymentExecStatus:
+                paymentExecStatus = paymentExecStatus[0]
+            else:
+                messages.error(request, _('Internal fault of the payment process.\
+                                          Please refer to the site\'s administration'))
+                return redirect("/")
 
             if (paymentExecStatus != PayPalTransaction.CREATED and
                     transaction.paymentExecStatus == PayPalTransaction.CREATED):

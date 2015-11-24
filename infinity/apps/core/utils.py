@@ -202,10 +202,22 @@ class CommentsContentTypeWrapper(CreateView):
         self.object.content_type = ContentType.objects.get_for_model(self.get_object())
         self.object.object_id = self.get_object().id
         self.object.save()
+
         notify_mentioned_users(self.object)
-		# temporary: add commenter to subscribers [ necessary evil? ]
+
+		# temporary: subscribe commenter
         self.object.content_object.subscribers.add(self.request.user)
         self.object.content_object.save()
+
+        # payments fields
+        amount = form.cleaned_data.get('amount', False)
+        currency = form.cleaned_data.get('currency', False)
+
+        if amount and currency:
+            self.request.session['amount'] = str(amount)
+            self.request.session['currency'] = currency
+            return redirect(reverse("payments:transaction_paypal", kwargs={'comment_id': self.object.id}))
+
         return super(CommentsContentTypeWrapper, self).form_valid(form)
 
 

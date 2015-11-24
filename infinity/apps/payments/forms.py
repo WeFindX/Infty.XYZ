@@ -87,11 +87,18 @@ class PayPalTransactionForm(forms.Form):
         self.comment_model = kwargs.pop('comment_model')
         super(PayPalTransactionForm, self).__init__(*args, **kwargs)
         self.initial['recipient_username'] = self.comment_model.user.id
+
+
         self.initial['amount'] = max(Decimal(0), round((self.comment_model.hours_assumed+\
                                                  self.comment_model.hours_claimed-\
                                                  self.comment_model.hours_donated)*\
                                                  HourValue.objects.latest('created_at').value,2))
                                 
+        if self.request.session.get('amount') and self.request.session.get('currency'):
+            self.initial['amount'] = Decimal(self.request.session.get('amount'))
+            self.initial['currency'] = int(self.request.session.get('currency'))
+            del self.request.session['amount']
+            del self.request.session['currency']
 
         self.helper = FormHelper(self)
         self.helper.layout.append(Submit('transaction_form', _('Send')))
