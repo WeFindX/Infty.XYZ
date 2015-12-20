@@ -26,7 +26,7 @@ from ..forms import IdeaUpdateForm
 from ..forms import IdeaCreateForm
 
 
-@ForbiddenUser(forbidden_usertypes=[u'AnonymousUser'])
+@ForbiddenUser(forbidden_usertypes=['AnonymousUser'])
 class IdeaListView1(ViewTypeWrapper, PaginationMixin, OrderableListMixin, ListFilteredView):
     template_name = "idea/list1.html"
     model = Idea
@@ -49,7 +49,7 @@ class IdeaListView1(ViewTypeWrapper, PaginationMixin, OrderableListMixin, ListFi
         return queryset
 
 
-@ForbiddenUser(forbidden_usertypes=[u'AnonymousUser'])
+@ForbiddenUser(forbidden_usertypes=['AnonymousUser'])
 class IdeaUpdateView(UpdateViewWrapper):
 
     """Idea update view"""
@@ -66,7 +66,7 @@ class IdeaUpdateView(UpdateViewWrapper):
         return reverse("idea-detail", args=[self.object.pk, ])
 
 
-@ForbiddenUser(forbidden_usertypes=[u'AnonymousUser'])
+@ForbiddenUser(forbidden_usertypes=['AnonymousUser'])
 class IdeaCreateView(CreateViewWrapper):
 
     """Idea create view"""
@@ -153,7 +153,7 @@ class IdeaDetailView(DetailViewWrapper, CommentsContentTypeWrapper):
         context = super(IdeaDetailView, self).get_context_data(**kwargs)
         obj = self.get_object()
         form = None
-        if self.request.user.__class__.__name__ not in [u'AnonymousUser']:
+        if self.request.user.__class__.__name__ not in ['AnonymousUser']:
             form = self.get_form_class()
         context.update({
             'form': form,

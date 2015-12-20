@@ -1,3 +1,3 @@
-from .paypal import *
-from .cryptsy import *
-from .blockchain import *
+from payments.models.paypal import *
+from payments.models.cryptsy import *
+from payments.models.blockchain import *

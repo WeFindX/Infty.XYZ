@@ -24,4 +24,4 @@ def get_country_by_ip(request_object):
     try:
         return geoip2reader.country(ip_address).country.iso_code
     except:
-		return 'XX'
+        return 'XX'

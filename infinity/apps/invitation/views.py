@@ -36,7 +36,7 @@ class InviteView(View):
         return redirect(reverse('account_signup'))
 
 
-@ForbiddenUser(forbidden_usertypes=[u'AnonymousUser'])
+@ForbiddenUser(forbidden_usertypes=['AnonymousUser'])
 class InvitationFormView(FormView):
     form_class = InvitationForm
     template_name = "invitation/invite.html"
@@ -96,7 +96,7 @@ class InvitationFormView(FormView):
         return redirect(self.get_success_url())
 
 
-@ForbiddenUser(forbidden_usertypes=[u'AnonymousUser'])
+@ForbiddenUser(forbidden_usertypes=['AnonymousUser'])
 class InvitationLetterTemplateView(DetailView):
     model = InvitationLetterTemplate
     slug_field = "language__omegawiki_language_id"

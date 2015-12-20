@@ -29,7 +29,7 @@ from ..models import Step
 from ..models import Task
 
 
-@ForbiddenUser(forbidden_usertypes=[u'AnonymousUser'])
+@ForbiddenUser(forbidden_usertypes=['AnonymousUser'])
 class StepListView1(ViewTypeWrapper, PaginationMixin, OrderableListMixin, ListFilteredView):
     template_name = "step/list1.html"
     model = Step
@@ -70,7 +70,7 @@ class StepUpdateView(UpdateViewWrapper):
         return reverse("plan-detail", args=[self.object.plan.pk, ])
 
 
-@ForbiddenUser(forbidden_usertypes=[u'AnonymousUser'])
+@ForbiddenUser(forbidden_usertypes=['AnonymousUser'])
 class StepCreateView(CreateViewWrapper):
 
     """Step create view"""
@@ -157,7 +157,7 @@ class StepDetailView(DetailViewWrapper, CommentsContentTypeWrapper):
         context = super(StepDetailView, self).get_context_data(**kwargs)
         obj = self.get_object()
         form = None
-        if self.request.user.__class__.__name__ not in [u'AnonymousUser']:
+        if self.request.user.__class__.__name__ not in ['AnonymousUser']:
             form = self.get_form_class()
         context.update({
             'form': form,
@@ -186,7 +186,7 @@ class StepDetailView(DetailViewWrapper, CommentsContentTypeWrapper):
         return context
 
 
-@ForbiddenUser(forbidden_usertypes=[u'AnonymousUser'])
+@ForbiddenUser(forbidden_usertypes=['AnonymousUser'])
 class ChangeStepPriorityView(JsonView):
     def post(self, request, *args, **kwargs):
         form = ChangePriorityForm(request.POST)

@@ -287,7 +287,9 @@ class JsonView(View):
 def WikiDataSearch(name, language, return_response=False):
     url = 'https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%s&language=%s&format=json' % \
         (name, language)
-    dicts = json.loads(requests.get(url).content)['search']
+    response = requests.get(url).content
+    data = json.loads(response.decode("utf-8"))
+    dicts = data['search']
 
     if return_response:
         return dicts
@@ -295,16 +297,16 @@ def WikiDataSearch(name, language, return_response=False):
     results = []
 
     for item in dicts:
-        if 'match' in item.keys():
+        if 'match' in list(item.keys()):
             expression = item['match']['text']
-        if 'aliases' in item.keys():
+        if 'aliases' in list(item.keys()):
             aliases = '; '.join(item['aliases'])
-        if 'description' in item.keys():
+        if 'description' in list(item.keys()):
             description = item['description']
         else:
             continue
 
-        if 'description' in item.keys():
+        if 'description' in list(item.keys()):
             if item['description'] == 'Wikimedia disambiguation page':
                 continue
             if item['description'] == 'Wikipedia disambiguation page':
@@ -326,7 +328,9 @@ def WikiDataSearch(name, language, return_response=False):
 def WikiDataGet(concept_q, language):
     url = 'https://www.wikidata.org/w/api.php?action=wbgetentities&ids=%s&languages=%s&format=json' % \
         (concept_q, language)
-    dicts = json.loads(requests.get(url).content)
+
+    response = requests.get(url).content
+    dicts = json.loads(response.decode("utf-8"))
 
     try:
         expression = dicts['entities'][concept_q]['labels'][language]['value']
@@ -358,7 +362,7 @@ def LookupCreateDefinition(defined_meaning_id, language):
     else:
     # query WikiData API, and create new definition based on response
         concept = WikiDataGet('Q'+str(defined_meaning_id), language.language_code)
-        print concept
+        print(concept)
         if concept['success']:
             definition = Definition.objects.create(name=concept['expression'],
                                                    definition=concept['definition'],

@@ -12,7 +12,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         content_types = ContentType.objects.get_for_models(Need, Goal, Idea, Plan, Step, Task, Work)
 
-        for model, content_type in content_types.items():
+        for model, content_type in list(content_types.items()):
             for instance in model.objects.all():
 
                 translations = Translation.objects.filter(

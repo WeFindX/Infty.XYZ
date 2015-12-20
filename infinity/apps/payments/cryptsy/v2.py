@@ -6,10 +6,10 @@ import requests
 import time
 import hmac,hashlib
 import logging
-import urllib
+import urllib.request, urllib.parse, urllib.error
 
 # Configure properly:
-requests.pyopenssl.inject_into_urllib3()
+#requests.pyopenssl.inject_into_urllib3()
 requests.packages.urllib3.disable_warnings()
 # https://urllib3.readthedocs.org/en/latest/ 
 
@@ -30,7 +30,7 @@ class Cryptsy:
                 route = route + "/" + str(action)
 
         query.append(('nonce', time.time()))
-        queryStr = urllib.urlencode(query)
+        queryStr = urllib.parse.urlencode(query)
         link = 'https://' + self.domain + route
         sign = hmac.new(self.PrivateKey.encode('utf-8'),
                         queryStr,

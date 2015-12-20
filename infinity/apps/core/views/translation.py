@@ -15,7 +15,7 @@ from ..forms import TranslationCreateForm
 from ..forms import TranslationUpdateForm
 
 
-@ForbiddenUser(forbidden_usertypes=[u'AnonymousUser'])
+@ForbiddenUser(forbidden_usertypes=['AnonymousUser'])
 class TranslationCreateView(CreateView):
     model = Translation
     form_class = TranslationCreateForm
@@ -65,7 +65,7 @@ class TranslationCreateView(CreateView):
         return form
 
 
-@ForbiddenUser(forbidden_usertypes=[u'AnonymousUser'])
+@ForbiddenUser(forbidden_usertypes=['AnonymousUser'])
 class TranslationUpdateView(UpdateView):
     model = Translation
     form_class = TranslationUpdateForm
@@ -109,7 +109,7 @@ class TranslationUpdateView(UpdateView):
         return form
 
 
-@ForbiddenUser(forbidden_usertypes=[u'AnonymousUser'])
+@ForbiddenUser(forbidden_usertypes=['AnonymousUser'])
 class TranslationDeleteView(DeleteView):
 
     """Goal delete view"""

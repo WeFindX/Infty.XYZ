@@ -1,7 +1,8 @@
-import urllib
-import urlparse
+from urllib.parse import urlencode
+from urllib.parse import parse_qs
 import collections
-import httplib
+
+from http import client
 
 from django.contrib.sites.models import Site
 from django.core.urlresolvers import reverse
@@ -14,6 +15,10 @@ from .cryptsy import v2
 from .exceptions import PayPalException
 
 from constance import config
+
+
+class PayPalException(Exception):
+    pass
 
 
 class CryptsyPay(object):
@@ -44,8 +49,8 @@ class CryptsyPay(object):
             currency_id
         )
 
-        currency = (item for item in cryptsy.currencies()['data']
-                    if item["id"] == str(currency_id)).next()
+        currency = next((item for item in cryptsy.currencies()['data']
+                    if item["id"] == str(currency_id)))
 
         try:
             destination_address = CoinAddress.objects.get(
@@ -107,13 +112,13 @@ class PayPal(object):
         """ Get payment information by payKey
         """
         if self.sandbox:
-            conn = httplib.HTTPSConnection("svcs.sandbox.paypal.com")
+            conn = client.HTTPConnection("svcs.sandbox.paypal.com", port=443)
         else:
-            conn = httplib.HTTPSConnection("svcs.paypal.com")
+            conn = client.HTTPConnection("svcs.paypal.com", port=443)
         params = collections.OrderedDict()
         params['payKey'] = payKey
         params['requestEnvelope.errorLanguage'] = self.error_language
-        enc_params = urllib.urlencode(params)
+        enc_params = urlencode(params)
         conn.request(
             "POST",
             "/AdaptivePayments/PaymentDetails/",
@@ -121,7 +126,7 @@ class PayPal(object):
             self.headers
         )
         response = conn.getresponse()
-        data = urlparse.parse_qs(response.read())
+        data = parse_qs(response.read())
         return data
 
     def adaptive_payment(self,
@@ -154,13 +159,13 @@ class PayPal(object):
         params['clientDetails.deviceId'] = 'mydevice'
         params['clientDetails.applicationId'] = 'PayNvpDemo'
 
-        enc_params = urllib.urlencode(params)
+        enc_params = urlencode(params)
 
         # Connect to sand box and POST.
         if self.sandbox:
-            conn = httplib.HTTPSConnection("svcs.sandbox.paypal.com")
+            conn = client.HTTPSConnection("svcs.sandbox.paypal.com", port=443)
         else:
-            conn = httplib.HTTPSConnection("svcs.paypal.com")
+            conn = client.HTTPSConnection("svcs.paypal.com", port=443)
 
         conn.request(
             "POST",
@@ -171,14 +176,17 @@ class PayPal(object):
         response = conn.getresponse()
 
         # Get the reply and print it out.
-        data = urlparse.parse_qs(response.read())
+        data = parse_qs(response.read())
 
         if data.get('error(0).message'):
             raise PayPalException(data.get('error(0).message'))
 
         # Set pay key
 
-        payKey = data['payKey'][0]
+        try:
+            payKey = data['payKey'][0]
+        except KeyError:
+            raise PayPalException(data)
 
         transaction = PayPalTransaction.objects.create(
             comment=comment_object,

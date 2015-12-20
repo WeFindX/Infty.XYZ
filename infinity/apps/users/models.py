@@ -50,13 +50,13 @@ class User(AbstractUser):
     REQUIRED_FIELDS = []
 
     def get_full_name(self):
-        return unicode(self)
+        return str(self)
 
     def get_short_name(self):
-        return unicode(self)
+        return str(self)
 
-    def __unicode__(self):
-        return unicode(self.username)
+    def __str__(self):
+        return self.username
 
     def get_absolute_url(self):
         return "/"

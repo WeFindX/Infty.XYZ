@@ -23,7 +23,7 @@ from core.models import Comment
 User = get_user_model()
 
 
-@ForbiddenUser(forbidden_usertypes=[u'AnonymousUser'])
+@ForbiddenUser(forbidden_usertypes=['AnonymousUser'])
 class PayPalTransactionView(FormView):
     template_name = 'paypal/transaction/create.html'
     form_class = PayPalTransactionForm

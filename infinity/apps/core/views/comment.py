@@ -22,7 +22,7 @@ class AjaxCommentVoteView(JsonView):
             user_id=request.user.id)
 
         if votes.exists():
-			vote = votes[0]
+            vote = votes[0]
         else:
             vote = Vote.objects.create(
                 comment_id=request.POST['comment_id'],

@@ -1,4 +1,4 @@
-from __future__ import unicode_literals
+
 
 from django.db import models
 from django.conf import settings
@@ -17,7 +17,7 @@ class InvitationLetterTemplate(models.Model):
     language = models.OneToOneField(Language)
     body = models.TextField()
 
-    def __unicode__(self):
+    def __str__(self):
         return "%s" % self.language
 
 
@@ -25,7 +25,7 @@ class InvitationOption(models.Model):
     user = models.OneToOneField(UserModelName)
     invitations_left = models.PositiveIntegerField(default=3)
 
-    def __unicode__(self):
+    def __str__(self):
         return "User: %s, Invitations left: %s" % (self.user, self.invitations_left)
 
 
@@ -45,7 +45,7 @@ class Invitation(models.Model):
         blank=True,
     )
 
-    def __unicode__(self):
+    def __str__(self):
         return "Invitation for: %s" % self.email
 
     def get_invitation_url(self):

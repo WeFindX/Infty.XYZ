@@ -35,7 +35,7 @@ class CoinAddressUpdateView(OwnerMixin, UpdateView):
         return reverse("payments:coin_address_list")
 
 
-@ForbiddenUser(forbidden_usertypes=[u'AnonymousUser'])
+@ForbiddenUser(forbidden_usertypes=['AnonymousUser'])
 class CoinAddressCreateView(FormView):
     model = CoinAddress
     form_class = CoinAddressForm
@@ -62,7 +62,7 @@ class CoinAddressDeleteView(OwnerMixin, DeleteView):
         return reverse("payments:coin_address_list")
 
 
-@ForbiddenUser(forbidden_usertypes=[u'AnonymousUser'])
+@ForbiddenUser(forbidden_usertypes=['AnonymousUser'])
 class CoinAddressListView(PaginationMixin, ListView):
     template_name = "coin/list.html"
     model = CoinAddress
@@ -91,7 +91,7 @@ class CryptsyCredentialUpdateView(OwnerMixin, UpdateView):
         return reverse("payments:cryptsy_credential_list")
 
 
-@ForbiddenUser(forbidden_usertypes=[u'AnonymousUser'])
+@ForbiddenUser(forbidden_usertypes=['AnonymousUser'])
 class CryptsyCredentialListView(PaginationMixin, ListView):
     model = CryptsyCredential
     paginate_by = 10
@@ -138,7 +138,7 @@ class CryptsyCredentialDeleteView(OwnerMixin, DeleteView):
         return reverse("payments:cryptsy_credential_list")
 
 
-@ForbiddenUser(forbidden_usertypes=[u'AnonymousUser'])
+@ForbiddenUser(forbidden_usertypes=['AnonymousUser'])
 class CryptsyCredentialCreateView(FormView):
     form_class = CryptsyCredentialForm
     template_name = 'cryptsy/credential/create.html'
@@ -165,7 +165,7 @@ class CryptsyCredentialCreateView(FormView):
         return reverse("payments:cryptsy_credential_list")
 
 
-@ForbiddenUser(forbidden_usertypes=[u'AnonymousUser'])
+@ForbiddenUser(forbidden_usertypes=['AnonymousUser'])
 class CryptsyTransactionCreateView(FormView):
     form_class = CryptsyTransactionForm
     template_name = 'cryptsy/transaction/create.html'

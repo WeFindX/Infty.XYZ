@@ -20,7 +20,7 @@ from ..models import Need
 from ..models import Definition
 from ..models import Language
 
-@ForbiddenUser(forbidden_usertypes=[u'AnonymousUser'])
+@ForbiddenUser(forbidden_usertypes=['AnonymousUser'])
 class NeedCreateView(CreateViewWrapper):
 
     """Need create view"""
@@ -134,7 +134,7 @@ class NeedDetailView(DetailViewWrapper, CommentsContentTypeWrapper):
         obj = self.get_object()
         form = None
 
-        if self.request.user.__class__.__name__ not in [u'AnonymousUser']:
+        if self.request.user.__class__.__name__ not in ['AnonymousUser']:
             form = self.get_form_class()
         context.update({
             'form': form,

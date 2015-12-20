@@ -33,5 +33,5 @@ class HourValue(models.Model):
         blank=False,
     )
 
-    def __unicode__(self):
+    def __str__(self):
         return "%s, value: (%s, %s)" % (self.created_at, self.date, self.value)

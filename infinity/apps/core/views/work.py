@@ -24,7 +24,7 @@ from ..models import Task
 from ..models import Work
 
 
-@ForbiddenUser(forbidden_usertypes=[u'AnonymousUser'])
+@ForbiddenUser(forbidden_usertypes=['AnonymousUser'])
 class WorkListView1(ViewTypeWrapper, PaginationMixin, OrderableListMixin, ListFilteredView):
     template_name = "work/list1.html"
     model = Work
@@ -65,7 +65,7 @@ class WorkUpdateView(UpdateViewWrapper):
         return reverse("work-detail", args=[self.object.pk, ])
 
 
-@ForbiddenUser(forbidden_usertypes=[u'AnonymousUser'])
+@ForbiddenUser(forbidden_usertypes=['AnonymousUser'])
 class WorkCreateView(CreateViewWrapper):
 
     """Work create view"""
@@ -146,7 +146,7 @@ class WorkDetailView(DetailViewWrapper, CommentsContentTypeWrapper):
         context = super(WorkDetailView, self).get_context_data(**kwargs)
         obj = self.get_object()
         form = None
-        if self.request.user.__class__.__name__ not in [u'AnonymousUser']:
+        if self.request.user.__class__.__name__ not in ['AnonymousUser']:
             form = self.get_form_class()
         context.update({
             'form': form,

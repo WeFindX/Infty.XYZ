@@ -48,7 +48,7 @@ class SetLanguageView(RedirectView):
         return response
 
 
-@ForbiddenUser(forbidden_usertypes=[u'AnonymousUser'])
+@ForbiddenUser(forbidden_usertypes=['AnonymousUser'])
 class ContentTypeSubscribeFormView(FormView):
     """
     Subscribe/unsubscribe view
@@ -171,7 +171,7 @@ class IndexView(TemplateView):
 
         instances = {}
 
-        for model_class, translations in content_types.items():
+        for model_class, translations in list(content_types.items()):
             model_class_lower_name = model_class.__name__.lower() + 's'
             instances[model_class_lower_name] = model_class.objects.filter(
                 q_object
@@ -205,7 +205,7 @@ class IndexView(TemplateView):
 
         instances_list = {}
 
-        for model, content_type in content_types.items():
+        for model, content_type in list(content_types.items()):
             model_name = model.__name__.lower()
             instances_list[model_name + '_list'] = [{
                 'object': instance,

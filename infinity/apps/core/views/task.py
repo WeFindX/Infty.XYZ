@@ -25,7 +25,7 @@ from ..models import Task
 from ..models import Work
 
 
-@ForbiddenUser(forbidden_usertypes=[u'AnonymousUser'])
+@ForbiddenUser(forbidden_usertypes=['AnonymousUser'])
 class TaskListView1(ViewTypeWrapper, PaginationMixin, OrderableListMixin, ListFilteredView):
 
     template_name = "task/list1.html"
@@ -64,7 +64,7 @@ class TaskUpdateView(UpdateViewWrapper):
         return reverse("step-detail", args=[self.object.step.pk, ])
 
 
-@ForbiddenUser(forbidden_usertypes=[u'AnonymousUser'])
+@ForbiddenUser(forbidden_usertypes=['AnonymousUser'])
 class TaskCreateView(CreateViewWrapper):
 
     """Task create view"""
@@ -146,7 +146,7 @@ class TaskDetailView(DetailViewWrapper, CommentsContentTypeWrapper):
         context = super(TaskDetailView, self).get_context_data(**kwargs)
         obj = self.get_object()
         form = None
-        if self.request.user.__class__.__name__ not in [u'AnonymousUser']:
+        if self.request.user.__class__.__name__ not in ['AnonymousUser']:
             form = self.get_form_class()
         context.update({
             'form': form,

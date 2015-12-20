@@ -1,5 +1,4 @@
 Django==1.8.2
-bpython==0.13
 django-braces==1.4.0
 django-model-utils==2.0.3
 django-pure-pagination==0.2.1
@@ -10,7 +9,7 @@ django-extensions
 webtest
 django-webtest==1.7.8
 https://github.com/vandersonmota/model_mommy/archive/master.zip
-django-crispy-forms==1.4.0
+django-crispy-forms==1.5.2
 # django-constance for 1.8, https://github.com/jezdez/django-constance/issues/93
 https://github.com/jonzlin95/django-constance/archive/master.zip
 django-picklefield
@@ -19,14 +18,14 @@ django-allauth==0.21.0
 django-avatar
 django-autofixture
 django-filter
-git+https://github.com/fernandoPardo/django-enhanced-cbv
+https://github.com/rasca/django-enhanced-cbv/archive/master.zip
 https://github.com/yrik/django-allauth-multiple/archive/master.zip
 sendgrid-django
 pyopenssl
 ndg-httpsclient
 pyasn1
 fabric
-django-clever-selects==0.6.9
+https://github.com/WeFindX/django-clever-selects/archive/master.zip
 django-markdown==0.8.4
 https://github.com/mindey/django-money-rates/archive/master.zip
 fred==3.1

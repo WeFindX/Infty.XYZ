@@ -26,7 +26,7 @@ from ..models import Idea
 from ..models import Need
 
 
-@ForbiddenUser(forbidden_usertypes=[u'AnonymousUser'])
+@ForbiddenUser(forbidden_usertypes=['AnonymousUser'])
 class GoalCreateView(CreateViewWrapper):
 
     """Goal create view"""
@@ -128,7 +128,7 @@ class GoalDetailView(DetailViewWrapper, CommentsContentTypeWrapper):
         obj = self.get_object()
         form = None
 
-        if self.request.user.__class__.__name__ not in [u'AnonymousUser']:
+        if self.request.user.__class__.__name__ not in ['AnonymousUser']:
             form = self.get_form_class()
         context.update({
             'form': form,

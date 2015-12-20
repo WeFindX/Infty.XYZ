@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext as _
 from django import forms
 
 from crispy_forms.helper import FormHelper
@@ -142,7 +142,7 @@ class CommentUpdateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': unicode(_('Select the users to share with:')),
+                    'placeholder': _('Select the users to share with:'),
                 }
             ), required=False
         )
@@ -181,7 +181,7 @@ class NeedCreateForm(forms.ModelForm):
             widget=AutoHeavySelect2Widget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': unicode(_('Select the thing that you need...')),
+                    'placeholder': _('Select the thing that you need...'),
                     'ajax': {
                         'dataType': 'json',
                         'quietMillis': 100,
@@ -196,7 +196,7 @@ class NeedCreateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': unicode(_('Select the users to share with:')),
+                    'placeholder': _('Select the users to share with:'),
                 }
             ), required=False,
             label=_('Share with:')
@@ -250,7 +250,7 @@ class NeedUpdateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': unicode(_('Select the users to share with:')),
+                    'placeholder': _('Select the users to share with:'),
                 }
             ), required=False
         )
@@ -300,7 +300,7 @@ class GoalCreateForm(forms.ModelForm):
             widget=AutoHeavySelect2Widget(
                 select2_options={
                     'minimumInputLength': 0,
-                    'placeholder': unicode(_('Select the type of the problem...')),
+                    'placeholder': _('Select the type of the problem...'),
                 }
             ),
             required=True
@@ -310,7 +310,7 @@ class GoalCreateForm(forms.ModelForm):
             widget=AutoHeavySelect2Widget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': unicode(_('Select the thing that you need...')),
+                    'placeholder': _('Select the thing that you need...'),
                     'ajax': {
                         'dataType': 'json',
                         'quietMillis': 100,
@@ -325,7 +325,7 @@ class GoalCreateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': unicode(_('Select the users to share with:')),
+                    'placeholder': _('Select the users to share with:'),
                 }
             ), required=False,
             label=_('Share with:')
@@ -391,7 +391,7 @@ class GoalUpdateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': unicode(_('Select the users to share with:')),
+                    'placeholder': _('Select the users to share with:'),
                 }
             ), required=False
         )
@@ -400,7 +400,7 @@ class GoalUpdateForm(forms.ModelForm):
             widget=AutoHeavySelect2Widget(
                 select2_options={
                     'minimumInputLength': 0,
-                    'placeholder': unicode(_('Select the thing that you need...')),
+                    'placeholder': _('Select the thing that you need...'),
                 }
             ), required=False,
         )
@@ -447,7 +447,7 @@ class WorkUpdateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': unicode(_('Select the users to share with:')),
+                    'placeholder': _('Select the users to share with:'),
                 }
             ), required=False
         )
@@ -495,7 +495,7 @@ class WorkCreateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': unicode(_('Select the users to share with:')),
+                    'placeholder': _('Select the users to share with:'),
                 }
             ), required=False
         )
@@ -559,7 +559,7 @@ class IdeaUpdateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': unicode(_('Select the users to share with:')),
+                    'placeholder': _('Select the users to share with:'),
                 }
             ), required=False
         )
@@ -620,7 +620,7 @@ class IdeaCreateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 0,
-                    'placeholder': unicode(_('Select a goal')),
+                    'placeholder': _('Select a goal'),
                     'ajax': {
                         'dataType': 'json',
                         'quietMillis': 100,
@@ -636,7 +636,7 @@ class IdeaCreateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': unicode(_('Select the users to share with:')),
+                    'placeholder': _('Select the users to share with:'),
                 }
             ), required=False
         )
@@ -696,7 +696,7 @@ class StepUpdateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': unicode(_('Select the users to share with:')),
+                    'placeholder': _('Select the users to share with:'),
                 }
             ), required=False
         )
@@ -746,7 +746,7 @@ class StepCreateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': unicode(_('Select the users to share with:')),
+                    'placeholder': _('Select the users to share with:'),
                 }
             ), required=False
         )
@@ -812,7 +812,7 @@ class TaskUpdateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': unicode(_('Select the users to share with:')),
+                    'placeholder': _('Select the users to share with:'),
                 }
             ), required=False
         )
@@ -857,7 +857,7 @@ class TaskCreateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': unicode(_('Select the users to share with:')),
+                    'placeholder': _('Select the users to share with:'),
                 }
             ), required=False
         )
@@ -910,7 +910,7 @@ class DefinitionCreateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': unicode(_('Select the users to share with:')),
+                    'placeholder': _('Select the users to share with:'),
                 }
             ), required=False
         )
@@ -954,7 +954,7 @@ class DefinitionCreateForm(forms.ModelForm):
                     submit_button,
                 ),
                 css_class='row',
-		css_id='div_id_define',
+                css_id='div_id_define',
             ),
         )
         self.fields['name'].label = ''
@@ -1019,7 +1019,7 @@ class PlanUpdateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': unicode(_('Select the users to share with:')),
+                    'placeholder': _('Select the users to share with:'),
                 }
             ), required=False
         )
@@ -1075,7 +1075,7 @@ class PlanCreateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': unicode(_('Select the users to share with:')),
+                    'placeholder': _('Select the users to share with:'),
                 }
             ), required=False
         )
@@ -1090,7 +1090,7 @@ class PlanCreateForm(forms.ModelForm):
             widget=AutoHeavySelect2Widget(
                 select2_options={
                     'minimumInputLength': 0,
-                    'placeholder': unicode(_('Select goal')),
+                    'placeholder': _('Select goal'),
                     'ajax': {
                         'dataType': 'json',
                         'quietMillis': 100,
@@ -1107,7 +1107,7 @@ class PlanCreateForm(forms.ModelForm):
             widget=AutoHeavySelect2Widget(
                 select2_options={
                     'minimumInputLength': 0,
-                    'placeholder': unicode(_('Select idea')),
+                    'placeholder': _('Select idea'),
                     'ajax': {
                         'dataType': 'json',
                         'quietMillis': 100,
@@ -1123,7 +1123,7 @@ class PlanCreateForm(forms.ModelForm):
             widget=AutoHeavySelect2MultipleWidget(
                 select2_options={
                     'minimumInputLength': 1,
-                    'placeholder': unicode(_('Select the members for the equity...')),
+                    'placeholder': _('Select the members for the equity...'),
                 }
             )
         )
