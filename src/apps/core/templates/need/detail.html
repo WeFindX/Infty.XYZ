@@ -109,11 +109,27 @@ $(document).ready( function() {
   {% for object in goal_list %}
       <ul class="list-group">
         <li class="list-group-item"> 
+
             {% if object.is_link %}
             <span class="badge">{% trans "link" %}</span>
             {% endif %}
-           <a href="{% url "goal-detail" object.pk %}">{{object.name}}</a>
-           <p>{{object.reason|markdown|truncatewords_html:35}}</p>
+            {% if object.personal %}
+                {% if user.is_anonymous %}
+                <i class="fa fa-lock"></i>
+                {% else %}
+                <i class="fa {% if object.user == request.user %}fa-lock{% else %}fa-flag{% endif %}"></i>
+                {% endif %}
+                {% if request.user in object.sharewith or request.user == object.user %}
+                    <a href="{% url "goal-detail" object.pk %}?lang={{ request.LANGUAGE_CODE }}">{{object.name}}</a>
+                    <p>{{object.reason|markdown|truncatewords_html:35}}</p>
+                {% else %}
+					<a href="{% url "goal-detail" object.pk %}?lang={{ request.LANGUAGE_CODE }}">{% trans "Private" %} {% trans "goal" %}.</a>
+					<p>{% trans "Request access:" %} [<a href="{% url 'user-detail' object.user.username %}">{{object.user.username}}</a>]</p>
+                {% endif %}
+            {% else %}
+                <a href="{% url "goal-detail" object.pk %}?lang={{ request.LANGUAGE_CODE }}">{{object.name}}</a>
+                <p>{{object.reason|markdown|truncatewords_html:35}}</p>
+            {% endif %}
         </li>
       </ul>
   {% endfor %}

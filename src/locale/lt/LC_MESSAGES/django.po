@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-10 15:52-0800\n"
-"PO-Revision-Date: 2016-01-11 02:02+0200\n"
+"POT-Creation-Date: 2016-01-16 08:10-0800\n"
+"PO-Revision-Date: 2016-01-16 18:25+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: lt\n"
@@ -19,31 +19,31 @@ msgstr ""
 "%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 1.8.6\n"
 
-#: src/apps/core/forms.py:69 src/apps/core/forms.py:163
-#: src/apps/core/forms.py:287 src/apps/core/forms.py:513
-#: src/apps/core/forms.py:654 src/apps/core/forms.py:791
-#: src/apps/core/forms.py:919 src/apps/core/forms.py:1181
+#: src/apps/core/forms.py:69 src/apps/core/forms.py:183
+#: src/apps/core/forms.py:309 src/apps/core/forms.py:539
+#: src/apps/core/forms.py:683 src/apps/core/forms.py:822
+#: src/apps/core/forms.py:952 src/apps/core/forms.py:1217
 msgid "Create"
 msgstr "Sukurti"
 
-#: src/apps/core/forms.py:81 src/apps/core/forms.py:139
-#: src/apps/core/forms.py:233 src/apps/core/forms.py:378
-#: src/apps/core/forms.py:452 src/apps/core/forms.py:587
-#: src/apps/core/forms.py:730 src/apps/core/forms.py:862
-#: src/apps/core/forms.py:1062 src/apps/core/forms.py:1101
+#: src/apps/core/forms.py:91 src/apps/core/forms.py:159
+#: src/apps/core/forms.py:253 src/apps/core/forms.py:400
+#: src/apps/core/forms.py:476 src/apps/core/forms.py:613
+#: src/apps/core/forms.py:759 src/apps/core/forms.py:893
+#: src/apps/core/forms.py:1095 src/apps/core/forms.py:1134
 #: src/apps/users/forms.py:61
 msgid "Update"
 msgstr ""
 
-#: src/apps/core/forms.py:96 src/apps/payments/forms.py:83
+#: src/apps/core/forms.py:116 src/apps/payments/forms.py:83
 msgid "USD"
 msgstr ""
 
-#: src/apps/core/forms.py:97 src/apps/payments/forms.py:84
+#: src/apps/core/forms.py:117 src/apps/payments/forms.py:84
 msgid "EUR"
 msgstr ""
 
-#: src/apps/core/forms.py:106
+#: src/apps/core/forms.py:126
 msgid ""
 "<b>Comment</b> (to claim hours, just\n"
 "                                      enclose a number within curly braces, "
@@ -62,34 +62,34 @@ msgstr ""
 "Nurodyti, kiek tikitės išleisti valandų, \n"
 "                                      naudokite klaustuką, pvz. {?1.5}."
 
-#: src/apps/core/forms.py:111
+#: src/apps/core/forms.py:131
 msgid ""
 "Notify mentioned users (e.g., <i>Hi [User], how are you?</i>) by e-mail."
 msgstr ""
 "Pranešti paminėtiems vartotojams (e.g., <i>Sveiki [vartotojau], kaip jum "
 "sekasi?</i>) apie komentarą el. paštu."
 
-#: src/apps/core/forms.py:112
+#: src/apps/core/forms.py:132
 msgid "Amount"
 msgstr "Kiekis"
 
-#: src/apps/core/forms.py:113
+#: src/apps/core/forms.py:133
 msgid "Currency"
 msgstr "Valiuta"
 
-#: src/apps/core/forms.py:117
+#: src/apps/core/forms.py:137
 msgid "Send Comment"
 msgstr "Komentuoti"
 
-#: src/apps/core/forms.py:134
+#: src/apps/core/forms.py:154
 msgid "Comment"
 msgstr "Komentaras"
 
-#: src/apps/core/forms.py:135
+#: src/apps/core/forms.py:155
 msgid "Notify mentioned users by e-mail."
 msgstr "Pranešti paminėtiems vartotojams el. paštu."
 
-#: src/apps/core/forms.py:194
+#: src/apps/core/forms.py:214
 #, fuzzy
 #| msgid ""
 #| "<b>Topic:</b> (relevant to problem,\n"
@@ -107,15 +107,15 @@ msgstr ""
 "\">čia</a> \n"
 "                                      pridėti naują.)"
 
-#: src/apps/core/forms.py:197
+#: src/apps/core/forms.py:217
 msgid "<b>Subject:</b>"
 msgstr "<b>Pasidalink su draugais:</b>"
 
-#: src/apps/core/forms.py:198
+#: src/apps/core/forms.py:218
 msgid "e.g., \"Hi friends, who would also want a spaceship?\""
 msgstr "pvz., \"Sveiki draugai, kas taip pat norėtumėte turėti erdvėlaivį?\""
 
-#: src/apps/core/forms.py:200
+#: src/apps/core/forms.py:220
 msgid ""
 "e.g., \"I have been dreaming about travelling to explore other planets since "
 "childhood. I would enjoy going on a long journey to the unknown together "
@@ -131,32 +131,32 @@ msgstr ""
 "įmanomus būdus, kaip mes tai galėtume padaryti, - nuo fizikos dėsnių iki "
 "konkrečių erdvėlaivio dizaino variantų bei logistikos.\""
 
-#: src/apps/core/forms.py:201 src/apps/core/forms.py:334
-#: src/apps/core/forms.py:539 src/apps/core/forms.py:684
-#: src/apps/core/forms.py:815 src/apps/core/forms.py:1222
+#: src/apps/core/forms.py:221 src/apps/core/forms.py:356
+#: src/apps/core/forms.py:565 src/apps/core/forms.py:713
+#: src/apps/core/forms.py:846 src/apps/core/forms.py:1258
 msgid ""
 "<b>Personal</b> (makes the entry visible only to a chosen set of people)"
 msgstr "<b>Asmeninis</b> (bus matomas tik parinktiems žmonėms)"
 
-#: src/apps/core/forms.py:202 src/apps/core/forms.py:252
-#: src/apps/core/forms.py:335 src/apps/core/forms.py:415
-#: src/apps/core/forms.py:475 src/apps/core/forms.py:540
-#: src/apps/core/forms.py:610 src/apps/core/forms.py:685
-#: src/apps/core/forms.py:751 src/apps/core/forms.py:816
-#: src/apps/core/forms.py:884 src/apps/core/forms.py:938
-#: src/apps/core/forms.py:1118 src/apps/core/forms.py:1223
+#: src/apps/core/forms.py:222 src/apps/core/forms.py:273
+#: src/apps/core/forms.py:357 src/apps/core/forms.py:438
+#: src/apps/core/forms.py:499 src/apps/core/forms.py:566
+#: src/apps/core/forms.py:636 src/apps/core/forms.py:714
+#: src/apps/core/forms.py:780 src/apps/core/forms.py:847
+#: src/apps/core/forms.py:915 src/apps/core/forms.py:971
+#: src/apps/core/forms.py:1151 src/apps/core/forms.py:1259
 msgid "<b>Input Language</b> (the language you used to compose this post) "
 msgstr "<b>Įvesties kalba</b> (kalba, kuria parašėte šio straipsnio turinį)"
 
-#: src/apps/core/forms.py:325
+#: src/apps/core/forms.py:347
 msgid "<b>Problem category:</b>"
 msgstr "<b>Problemos sritis:</b>"
 
-#: src/apps/core/forms.py:326
+#: src/apps/core/forms.py:348
 msgid "<b>Related Need:</b> (Optional)"
 msgstr "<b>Susijęs noras:</b> (nebūtinas)"
 
-#: src/apps/core/forms.py:327
+#: src/apps/core/forms.py:349
 msgid ""
 "<b>Title:</b> (e.g., Potable Water\n"
 "                                      Shortage, <a href=\"/goal/list/"
@@ -169,7 +169,7 @@ msgstr ""
 "                                      neapibrėžė panašios problemos "
 "anksčiau.)"
 
-#: src/apps/core/forms.py:331
+#: src/apps/core/forms.py:353
 msgid ""
 "<b>Description:</b> (e.g., Many people in the world lack clean potable "
 "water.)"
@@ -177,113 +177,113 @@ msgstr ""
 "<b>Aprašymas:</b> (pvz., daug žmonių pasaulyje trūksta švaraus geriamo "
 "vandens.)"
 
-#: src/apps/core/forms.py:337 src/apps/core/forms.py:417
-#: src/apps/core/forms.py:476 src/apps/core/forms.py:541
-#: src/apps/core/forms.py:611 src/apps/core/forms.py:688
-#: src/apps/core/forms.py:752 src/apps/core/forms.py:817
-#: src/apps/core/forms.py:885 src/apps/core/forms.py:939
-#: src/apps/core/forms.py:1119 src/apps/core/forms.py:1224
+#: src/apps/core/forms.py:359 src/apps/core/forms.py:440
+#: src/apps/core/forms.py:500 src/apps/core/forms.py:567
+#: src/apps/core/forms.py:637 src/apps/core/forms.py:717
+#: src/apps/core/forms.py:781 src/apps/core/forms.py:848
+#: src/apps/core/forms.py:916 src/apps/core/forms.py:972
+#: src/apps/core/forms.py:1152 src/apps/core/forms.py:1260
 msgid ""
 "<b>This is a link</b> (check if you are only linking to existing content)"
 msgstr ""
 "<b>Tai yra nuoroda</b> (pažymėkite, jei turinys yra paimtas ir adaptuotas iš "
 "kitur)"
 
-#: src/apps/core/forms.py:338 src/apps/core/forms.py:418
-#: src/apps/core/forms.py:477 src/apps/core/forms.py:542
-#: src/apps/core/forms.py:612 src/apps/core/forms.py:689
-#: src/apps/core/forms.py:753 src/apps/core/forms.py:818
-#: src/apps/core/forms.py:886 src/apps/core/forms.py:940
-#: src/apps/core/forms.py:1120 src/apps/core/forms.py:1225
+#: src/apps/core/forms.py:360 src/apps/core/forms.py:441
+#: src/apps/core/forms.py:501 src/apps/core/forms.py:568
+#: src/apps/core/forms.py:638 src/apps/core/forms.py:718
+#: src/apps/core/forms.py:782 src/apps/core/forms.py:849
+#: src/apps/core/forms.py:917 src/apps/core/forms.py:973
+#: src/apps/core/forms.py:1153 src/apps/core/forms.py:1261
 msgid "<b>Origin:</b> (of the source)"
 msgstr "<b>Šaltinis:</b> (originalo adresas)"
 
-#: src/apps/core/forms.py:339 src/apps/core/forms.py:419
-#: src/apps/core/forms.py:478 src/apps/core/forms.py:536
-#: src/apps/core/forms.py:543 src/apps/core/forms.py:613
-#: src/apps/core/forms.py:690 src/apps/core/forms.py:754
-#: src/apps/core/forms.py:819 src/apps/core/forms.py:887
-#: src/apps/core/forms.py:941 src/apps/core/forms.py:1121
-#: src/apps/core/forms.py:1226
+#: src/apps/core/forms.py:361 src/apps/core/forms.py:442
+#: src/apps/core/forms.py:502 src/apps/core/forms.py:562
+#: src/apps/core/forms.py:569 src/apps/core/forms.py:639
+#: src/apps/core/forms.py:719 src/apps/core/forms.py:783
+#: src/apps/core/forms.py:850 src/apps/core/forms.py:918
+#: src/apps/core/forms.py:974 src/apps/core/forms.py:1154
+#: src/apps/core/forms.py:1262
 msgid "http://"
 msgstr ""
 
-#: src/apps/core/forms.py:340 src/apps/core/forms.py:420
+#: src/apps/core/forms.py:362 src/apps/core/forms.py:443
 msgid ""
 "<b>This is a history</b> (check if you are documenting a problem of the past)"
 msgstr ""
 "<b>Tai istorinis įrašas</b> (pažymėkite, jei aprašote praeties istorinę "
 "problemą)"
 
-#: src/apps/core/forms.py:479 src/apps/core/forms.py:544
+#: src/apps/core/forms.py:503 src/apps/core/forms.py:570
 msgid ""
 "<b>This is a history</b> (check if you are documenting a historical work)"
 msgstr ""
 "<b>Tai istorinis įrašas</b> (pažymėkite, jei aprašote praeities istorinį "
 "darbą)"
 
-#: src/apps/core/forms.py:531
+#: src/apps/core/forms.py:557
 msgid ""
 "<b>Name:</b> (e.g., \"First attempt to assemble solar cells.\", used in "
 "title.)"
 msgstr ""
 
-#: src/apps/core/forms.py:532
+#: src/apps/core/forms.py:558
 msgid "Give a title to your work."
 msgstr ""
 
-#: src/apps/core/forms.py:533
+#: src/apps/core/forms.py:559
 msgid "<b>Description:</b> (details about the work, used as body.)"
 msgstr ""
 
-#: src/apps/core/forms.py:534
+#: src/apps/core/forms.py:560
 msgid "Here is a little story of my work."
 msgstr ""
 
-#: src/apps/core/forms.py:535
+#: src/apps/core/forms.py:561
 msgid "<b>File:</b> (you can upload a file describing your work)"
 msgstr ""
 
-#: src/apps/core/forms.py:537
+#: src/apps/core/forms.py:563
 msgid "<b>Parent Work Id:</b> (integer referring to other work)"
 msgstr ""
 
-#: src/apps/core/forms.py:538
+#: src/apps/core/forms.py:564
 msgid "optional"
 msgstr ""
 
-#: src/apps/core/forms.py:614 src/apps/core/forms.py:691
+#: src/apps/core/forms.py:640 src/apps/core/forms.py:720
 msgid ""
 "<b>This is a history</b> (check if you are documenting an idea of the past)"
 msgstr ""
 "<b>Tai istorinis įrašas</b> (pažymėkite, jei aprašote praeities istorinę "
 "idėją)"
 
-#: src/apps/core/forms.py:679 src/apps/core/templates/goal/list2.html.py:6
+#: src/apps/core/forms.py:708 src/apps/core/templates/goal/list2.html.py:6
 #: src/apps/core/templates/goal/list2.html:9
-#: src/apps/core/templates/need/detail.html:107 src/templates/home.html:134
+#: src/apps/core/templates/need/detail.html:107 src/templates/home.html:137
 msgid "Goals"
 msgstr "Tikslai"
 
-#: src/apps/core/forms.py:681
+#: src/apps/core/forms.py:710
 msgid "<b>Name:</b> (e.g., \"Solar Water Condenser\", used in title.)"
 msgstr ""
 
-#: src/apps/core/forms.py:682
+#: src/apps/core/forms.py:711
 msgid ""
 "<b>Summary:</b> (e.g., \"Use solar panels and Peltier effect to extract "
 "water from air.\", appears as subtitle.)"
 msgstr ""
 
-#: src/apps/core/forms.py:683
+#: src/apps/core/forms.py:712
 msgid "<b>Description:</b> (write full description here, used as body.)"
 msgstr ""
 
-#: src/apps/core/forms.py:687 src/apps/core/forms.py:1214
+#: src/apps/core/forms.py:716 src/apps/core/forms.py:1250
 msgid "Share with:"
 msgstr "Dalintis su:"
 
-#: src/apps/core/forms.py:755 src/apps/core/forms.py:820
+#: src/apps/core/forms.py:784 src/apps/core/forms.py:851
 msgid ""
 "<b>This is a history</b> (check if you are documenting a milestone of the "
 "past)"
@@ -291,21 +291,21 @@ msgstr ""
 "<b>Tai istorinis įrašas</b> (pažymėkite, jei aprašote praeities projekto "
 "istorinį etapą)"
 
-#: src/apps/core/forms.py:806
+#: src/apps/core/forms.py:837
 msgid "<b>Milestone:</b> (e.g., \"assemble solar panels\", used in title.)"
 msgstr ""
 
-#: src/apps/core/forms.py:807
+#: src/apps/core/forms.py:838
 msgid "Type the name of the milestone."
 msgstr ""
 
-#: src/apps/core/forms.py:808
+#: src/apps/core/forms.py:839
 msgid ""
 "<b>Objective:</b> (describe conditions, when you will consider the milestone "
 "to be 'achieved')"
 msgstr ""
 
-#: src/apps/core/forms.py:809
+#: src/apps/core/forms.py:840
 msgid ""
 "Example:\n"
 "\n"
@@ -314,95 +314,95 @@ msgid ""
 "- Passes certain tests of reliability."
 msgstr ""
 
-#: src/apps/core/forms.py:810
+#: src/apps/core/forms.py:841
 msgid ""
 "<b>Priority:</b> (integer, e.g., 1,2,3.. - used for ordering, smaller number "
 "means the milestone has to be done earlier)"
 msgstr ""
 
-#: src/apps/core/forms.py:811
+#: src/apps/core/forms.py:842
 msgid ""
 "<b>Investables:</b> (e.g., enumerate the ranges of quantities you expect to "
 "invest on this milestone in <a href=\"https://github.com/mindey/"
 "IdeaLib#minimal\">IDL syntax</a>, used used for value computation.)"
 msgstr ""
 
-#: src/apps/core/forms.py:812
+#: src/apps/core/forms.py:843
 msgid "people 1\\3, days 10\\20, usd 50\\70"
 msgstr ""
 
-#: src/apps/core/forms.py:813
+#: src/apps/core/forms.py:844
 msgid ""
 "<b>Deliverables:</b> (e.g., enumerate the ranges of quantities you expect to "
 "have by completion of this milestone in <a href=\"https://github.com/mindey/"
 "IdeaLib#minimal\">IDL syntax</a>, used used for value computation.)"
 msgstr ""
 
-#: src/apps/core/forms.py:814
+#: src/apps/core/forms.py:845
 msgid "complete solar assembly drawings 0\\1, solar cell assembly 1\\2"
 msgstr ""
 
-#: src/apps/core/forms.py:888 src/apps/core/forms.py:942
+#: src/apps/core/forms.py:919 src/apps/core/forms.py:975
 msgid ""
 "<b>This is a history</b> (check if you are documenting a historical task)"
 msgstr ""
 "<b>Tai istorinis įrašas</b> (pažymėkite, jei aprašote praeties projekto "
 "istorinę užduotį)"
 
-#: src/apps/core/forms.py:935
+#: src/apps/core/forms.py:968
 msgid "<b>Task:</b> (e.g., \"Purchase solar cells\", text in title.)"
 msgstr ""
 
-#: src/apps/core/forms.py:936
+#: src/apps/core/forms.py:969
 msgid "Type the name of the task."
 msgstr ""
 
-#: src/apps/core/forms.py:937
+#: src/apps/core/forms.py:970
 msgid ""
 "<b>Priority:</b> (integer, e.g., 1,2,3.. - used for ordering, smaller number "
 "means the task has to be done earlier)"
 msgstr ""
 
-#: src/apps/core/forms.py:995 src/apps/core/forms.py:1001
+#: src/apps/core/forms.py:1028 src/apps/core/forms.py:1034
 msgid "Add & Go"
 msgstr "Pirmyn"
 
-#: src/apps/core/forms.py:1024
+#: src/apps/core/forms.py:1057
 msgid "definition, e.g., 'spaceflight beyond the bounderies of galaxies'"
 msgstr "kaip apibrėši? pvz.: skrydis už galaktikų ribų"
 
-#: src/apps/core/forms.py:1122 src/apps/core/forms.py:1227
+#: src/apps/core/forms.py:1155 src/apps/core/forms.py:1263
 msgid ""
 "<b>This is a history</b> (check if you are documenting a project of the past)"
 msgstr ""
 "<b>Tai istorinis įrašas</b> (pažymėkite, jei aprašote praeities istorinį "
 "projektą)"
 
-#: src/apps/core/forms.py:1209 src/apps/core/templates/idea/create.html.py:16
+#: src/apps/core/forms.py:1245 src/apps/core/templates/idea/create.html.py:16
 #: src/templates/home.html:37
 msgid "Goal"
 msgstr "Tikslas"
 
-#: src/apps/core/forms.py:1211 src/apps/core/templates/plan/create.html.py:16
+#: src/apps/core/forms.py:1247 src/apps/core/templates/plan/create.html.py:16
 #: src/templates/home.html:38
 msgid "Idea"
 msgstr "Idėja"
 
-#: src/apps/core/forms.py:1213
+#: src/apps/core/forms.py:1249
 msgid "Members"
 msgstr ""
 
-#: src/apps/core/forms.py:1216
+#: src/apps/core/forms.py:1252
 msgid "<b>Name:</b> (e.g., \"Solar Water Project\".)"
 msgstr ""
 
-#: src/apps/core/forms.py:1218
+#: src/apps/core/forms.py:1254
 msgid ""
 "<b>Situation:</b> (Describe your current situation by listing the things "
 "that you have, including access.)"
 msgstr ""
 
-#: src/apps/core/forms.py:1219
+#: src/apps/core/forms.py:1255
 msgid ""
 "Example:\n"
 "\n"
@@ -415,11 +415,11 @@ msgid ""
 " - 150 USD for this project"
 msgstr ""
 
-#: src/apps/core/forms.py:1220
+#: src/apps/core/forms.py:1256
 msgid "<b>Deliverable:</b> (Describe what do you expect to get.)"
 msgstr ""
 
-#: src/apps/core/forms.py:1221
+#: src/apps/core/forms.py:1257
 msgid ""
 "Example:\n"
 "\n"
@@ -427,11 +427,11 @@ msgid ""
 "published on GitHub, so others could easily replicate."
 msgstr ""
 
-#: src/apps/core/templates/comment/list.html:46
+#: src/apps/core/templates/comment/list.html:45
 msgid "New comment"
 msgstr "Naujas komentaras"
 
-#: src/apps/core/templates/comment/list.html:82
+#: src/apps/core/templates/comment/list.html:85
 #: src/apps/core/templates/goal/detail.html:94
 #: src/apps/core/templates/idea/detail.html:99
 #: src/apps/core/templates/need/detail.html:94
@@ -440,7 +440,7 @@ msgstr "Naujas komentaras"
 msgid "edit"
 msgstr "redaguoti"
 
-#: src/apps/core/templates/comment/list.html:82
+#: src/apps/core/templates/comment/list.html:85
 #: src/apps/core/templates/goal/detail.html:94
 #: src/apps/core/templates/idea/detail.html:99
 #: src/apps/core/templates/need/detail.html:94
@@ -448,29 +448,29 @@ msgstr "redaguoti"
 msgid "delete"
 msgstr "ištrinti"
 
-#: src/apps/core/templates/comment/list.html:84
+#: src/apps/core/templates/comment/list.html:87
 msgid "reply"
 msgstr "atsakyti"
 
-#: src/apps/core/templates/comment/list.html:94
-#: src/apps/core/templates/comment/list.html:99
-#: src/apps/core/templates/comment/list.html:104
-#: src/apps/core/templates/comment/list.html:110
+#: src/apps/core/templates/comment/list.html:97
+#: src/apps/core/templates/comment/list.html:102
+#: src/apps/core/templates/comment/list.html:107
+#: src/apps/core/templates/comment/list.html:113
 msgid "Vote Up"
 msgstr "Balsuoti už"
 
-#: src/apps/core/templates/comment/list.html:95
-#: src/apps/core/templates/comment/list.html:100
-#: src/apps/core/templates/comment/list.html:105
-#: src/apps/core/templates/comment/list.html:111
+#: src/apps/core/templates/comment/list.html:98
+#: src/apps/core/templates/comment/list.html:103
+#: src/apps/core/templates/comment/list.html:108
+#: src/apps/core/templates/comment/list.html:114
 msgid "Vote Down"
 msgstr "Balsuoti prieš"
 
-#: src/apps/core/templates/comment/list.html:142
+#: src/apps/core/templates/comment/list.html:145
 msgid "credit"
 msgstr "kreditas"
 
-#: src/apps/core/templates/comment/list.html:177
+#: src/apps/core/templates/comment/list.html:180
 msgid "Invite a friend to help!"
 msgstr "Pakviesti draugą padėti."
 
@@ -513,10 +513,10 @@ msgstr "transporto priemonė skirta skrydžiams į kosmosą"
 #: src/apps/core/templates/plan/detail.html:136
 #: src/apps/core/templates/step/detail.html:94
 #: src/apps/core/templates/task/detail.html:82
-#: src/apps/core/templates/work/detail.html:102 src/templates/home.html:81
-#: src/templates/home.html.py:158 src/templates/home.html:239
-#: src/templates/home.html.py:325 src/templates/home.html:412
-#: src/templates/home.html.py:501 src/templates/home.html:586
+#: src/apps/core/templates/work/detail.html:102 src/templates/home.html:88
+#: src/templates/home.html.py:160 src/templates/home.html:240
+#: src/templates/home.html.py:325 src/templates/home.html:411
+#: src/templates/home.html.py:499 src/templates/home.html:583
 msgid "link"
 msgstr "adaptuotas"
 
@@ -621,14 +621,14 @@ msgstr "vertimai:"
 #: src/apps/core/templates/plan/detail.html:102
 #: src/apps/core/templates/step/detail.html:54
 #: src/apps/core/templates/task/detail.html:54
-#: src/apps/core/templates/work/detail.html:55 src/templates/home.html.py:79
-#: src/templates/home.html:85 src/templates/home.html.py:156
-#: src/templates/home.html:162 src/templates/home.html.py:237
-#: src/templates/home.html:243 src/templates/home.html.py:323
-#: src/templates/home.html:329 src/templates/home.html.py:410
-#: src/templates/home.html:416 src/templates/home.html.py:499
-#: src/templates/home.html:505 src/templates/home.html.py:584
-#: src/templates/home.html:590
+#: src/apps/core/templates/work/detail.html:55 src/templates/home.html.py:86
+#: src/templates/home.html:92 src/templates/home.html.py:158
+#: src/templates/home.html:164 src/templates/home.html.py:238
+#: src/templates/home.html:244 src/templates/home.html.py:323
+#: src/templates/home.html:329 src/templates/home.html.py:409
+#: src/templates/home.html:415 src/templates/home.html.py:497
+#: src/templates/home.html:503 src/templates/home.html.py:581
+#: src/templates/home.html:587
 msgid "historical"
 msgstr "istorinis"
 
@@ -651,7 +651,7 @@ msgstr "Dalinamasi su:"
 
 #: src/apps/core/templates/goal/detail.html:108
 #: src/apps/core/templates/idea/list2.html:6
-#: src/apps/core/templates/idea/list2.html:9 src/templates/home.html.py:210
+#: src/apps/core/templates/idea/list2.html:9 src/templates/home.html.py:212
 msgid "Ideas"
 msgstr "Idėjos"
 
@@ -681,7 +681,7 @@ msgstr "norim:"
 
 #: src/apps/core/templates/idea/detail.html:113
 #: src/apps/core/templates/plan/list2.html:6
-#: src/apps/core/templates/plan/list2.html:9 src/templates/home.html.py:297
+#: src/apps/core/templates/plan/list2.html:9 src/templates/home.html.py:298
 msgid "Plans"
 msgstr "Planai"
 
@@ -1045,12 +1045,12 @@ msgstr ""
 msgid "Japanese"
 msgstr ""
 
-#: src/templates/about.html:55 src/templates/base.html.py:122
+#: src/templates/about.html:55 src/templates/base.html.py:116
 #: src/templates/data.html:10
 msgid "Open Data"
 msgstr "Atviri duomenys"
 
-#: src/templates/about.html:56 src/templates/base.html.py:124
+#: src/templates/about.html:56 src/templates/base.html.py:118
 #: src/templates/dev.html:10
 msgid "Open Source"
 msgstr "Atviras kodas"
@@ -1185,7 +1185,7 @@ msgid ""
 "mail address for user %(user_display)s."
 msgstr ""
 
-#: src/templates/account/login.html:10 src/templates/base.html.py:152
+#: src/templates/account/login.html:10 src/templates/base.html.py:146
 msgid "Sign in"
 msgstr "Prisijungti"
 
@@ -1401,25 +1401,25 @@ msgid ""
 "mail address</a>."
 msgstr ""
 
-#: src/templates/base.html:97
+#: src/templates/base.html:91
 msgid "Solving Problems"
 msgstr "Spręskime problemas"
 
-#: src/templates/base.html:129
+#: src/templates/base.html:123
 msgid "public index"
-msgstr "Temos"
+msgstr "Viešos"
 
-#: src/templates/base.html:134
+#: src/templates/base.html:128
 msgid "About"
 msgstr "Apie projektą"
 
-#: src/templates/base.html:140
+#: src/templates/base.html:134
 msgid "Logout"
 msgstr "Atsijungti"
 
-#: src/templates/base.html:142
+#: src/templates/base.html:136
 msgid "private inbox"
-msgstr "Gautieji"
+msgstr "Privačios"
 
 #: src/templates/home.html:21
 msgid "invitations"
@@ -1441,52 +1441,46 @@ msgstr "Rašyti"
 msgid "Plan"
 msgstr "Planas"
 
-#: src/templates/home.html:57
+#: src/templates/home.html:45 src/templates/search_form.html.py:17
+msgid "Search"
+msgstr ""
+
+#: src/templates/home.html:59
 msgid "Needs"
 msgstr "Poreikiai"
 
-#: src/templates/home.html:58
+#: src/templates/home.html:62
 msgid "share a need"
 msgstr "pasidalinti poreikiu"
 
-#: src/templates/home.html:73 src/templates/home.html.py:150
-#: src/templates/home.html:229 src/templates/home.html.py:317
-#: src/templates/home.html:403 src/templates/home.html.py:492
-#: src/templates/home.html:577
-msgid "(last commented"
-msgstr "(paskutinis komentaras prieš"
+#: src/templates/home.html:64
+msgid "write an open letter"
+msgstr "parašyti viešąjį laišką"
 
-#: src/templates/home.html:73 src/templates/home.html.py:150
-#: src/templates/home.html:229 src/templates/home.html.py:317
-#: src/templates/home.html:403 src/templates/home.html.py:492
-#: src/templates/home.html:577
-msgid "hours ago)"
-msgstr "valandų)"
-
-#: src/templates/home.html:112
+#: src/templates/home.html:119
 #, fuzzy
 #| msgid "Oops! You have no ideas!"
 msgid "Oops! You have no needs!"
 msgstr "Jūs dar neturite idėjų!"
 
-#: src/templates/home.html:113
+#: src/templates/home.html:120
 #, fuzzy
 #| msgid "Define what you need"
 msgid "Define a need"
 msgstr "Apibrėžk, ko nori"
 
-#: src/templates/home.html:114 src/templates/home.html.py:192
-#: src/templates/home.html:278 src/templates/home.html.py:364
-#: src/templates/home.html:451 src/templates/home.html.py:541
-#: src/templates/home.html:626
+#: src/templates/home.html:121 src/templates/home.html.py:194
+#: src/templates/home.html:279 src/templates/home.html.py:364
+#: src/templates/home.html:450 src/templates/home.html.py:539
+#: src/templates/home.html:623
 msgid "...or view"
 msgstr "...arba žr."
 
-#: src/templates/home.html:114
+#: src/templates/home.html:121
 msgid "<u>discussion board</u>"
 msgstr ""
 
-#: src/templates/home.html:117
+#: src/templates/home.html:124
 msgid ""
 "\n"
 "                    <p><i><u>Example:</u></i></p>\n"
@@ -1496,31 +1490,31 @@ msgid ""
 "                    "
 msgstr ""
 
-#: src/templates/home.html:135
+#: src/templates/home.html:138
 msgid "define a problem"
 msgstr "apibrėžti problemą"
 
-#: src/templates/home.html:187 src/templates/home.html.py:272
-#: src/templates/home.html:358 src/templates/home.html.py:446
-#: src/templates/home.html:536 src/templates/home.html.py:621
+#: src/templates/home.html:189 src/templates/home.html.py:273
+#: src/templates/home.html:358 src/templates/home.html.py:445
+#: src/templates/home.html:534 src/templates/home.html.py:618
 msgid "see more"
 msgstr "skaityti daugiau..."
 
-#: src/templates/home.html:190
+#: src/templates/home.html:192
 msgid "Oops! You have no goals!"
 msgstr "Jūs dar neturite tikslų!"
 
-#: src/templates/home.html:191
+#: src/templates/home.html:193
 msgid "Add a problem"
 msgstr "Apibrėžkite problemą"
 
-#: src/templates/home.html:192 src/templates/home.html.py:278
-#: src/templates/home.html:364 src/templates/home.html.py:451
-#: src/templates/home.html:541 src/templates/home.html.py:626
+#: src/templates/home.html:194 src/templates/home.html.py:279
+#: src/templates/home.html:364 src/templates/home.html.py:450
+#: src/templates/home.html:539 src/templates/home.html.py:623
 msgid "<u>index</u>"
 msgstr "<u>viešą turinį</u>"
 
-#: src/templates/home.html:195
+#: src/templates/home.html:197
 msgid ""
 "\n"
 "                    <p><i><u>Example:</u></i></p>\n"
@@ -1531,19 +1525,19 @@ msgid ""
 "                    "
 msgstr ""
 
-#: src/templates/home.html:211
+#: src/templates/home.html:213
 msgid "suggest a solution"
 msgstr "pasiūlyti sprendimą"
 
-#: src/templates/home.html:276
+#: src/templates/home.html:277
 msgid "Oops! You have no ideas!"
 msgstr "Jūs dar neturite idėjų!"
 
-#: src/templates/home.html:277
+#: src/templates/home.html:278
 msgid "Add a solution"
 msgstr "Pridėkite sumanymą"
 
-#: src/templates/home.html:281
+#: src/templates/home.html:282
 msgid ""
 "\n"
 "                <p><i><u>Example ideas:</u></i></p>\n"
@@ -1556,7 +1550,7 @@ msgid ""
 "                "
 msgstr ""
 
-#: src/templates/home.html:299
+#: src/templates/home.html:300
 msgid "start a project"
 msgstr "pradėti projektą"
 
@@ -1585,15 +1579,15 @@ msgstr ""
 msgid "break it down"
 msgstr "išskaidyti į etapus"
 
-#: src/templates/home.html:449
+#: src/templates/home.html:448
 msgid "Oops! You have no steps!"
 msgstr "Jūs dar neturite uždavinių!"
 
-#: src/templates/home.html:450
+#: src/templates/home.html:449
 msgid "Start a project to add milestones"
 msgstr "Pradėkite projektą, ir prie jo pridėkite etapus"
 
-#: src/templates/home.html:454
+#: src/templates/home.html:453
 msgid ""
 "\n"
 "                <p><i><u>Example:</u></i></p>\n"
@@ -1611,23 +1605,23 @@ msgid ""
 "                "
 msgstr ""
 
-#: src/templates/home.html:474
+#: src/templates/home.html:473
 msgid "Tasks"
 msgstr "Užduotys"
 
-#: src/templates/home.html:476
+#: src/templates/home.html:475
 msgid "execute it"
 msgstr "vykdyti"
 
-#: src/templates/home.html:539
+#: src/templates/home.html:537
 msgid "Oops! You have no tasks!"
 msgstr ""
 
-#: src/templates/home.html:540
+#: src/templates/home.html:538
 msgid "Choose a milestone to add tasks"
 msgstr ""
 
-#: src/templates/home.html:543
+#: src/templates/home.html:541
 msgid ""
 "\n"
 "                <p><i><u>Example:</u></i></p>\n"
@@ -1636,25 +1630,25 @@ msgid ""
 "                "
 msgstr ""
 
-#: src/templates/home.html:559
+#: src/templates/home.html:557
 msgid "Works"
 msgstr "Darbai"
 
-#: src/templates/home.html:561
+#: src/templates/home.html:559
 msgid "did it"
 msgstr "padaryta!"
 
-#: src/templates/home.html:624
+#: src/templates/home.html:621
 #, fuzzy
 #| msgid "Oops! You have no goals!"
 msgid "Oops! You have no works!"
 msgstr "Jūs dar neturite tikslų!"
 
-#: src/templates/home.html:625
+#: src/templates/home.html:622
 msgid "Choose a task to add works"
 msgstr ""
 
-#: src/templates/home.html:628
+#: src/templates/home.html:625
 msgid ""
 "\n"
 "                <p><i><u>Example:</u></i></p>\n"
@@ -1663,7 +1657,7 @@ msgid ""
 "                "
 msgstr ""
 
-#: src/templates/home.html:638
+#: src/templates/home.html:635
 msgid "People-centric economy."
 msgstr "— ekonomika žmogui —"
 
@@ -1800,10 +1794,6 @@ msgstr ""
 msgid "Publishing problems"
 msgstr "Spręskim problemas"
 
-#: src/templates/search_form.html:17
-msgid "Search"
-msgstr ""
-
 #: src/templates/search_form.html:18
 msgid "Reset Filter"
 msgstr ""
@@ -1823,6 +1813,12 @@ msgstr ""
 #: src/templates/translations.html:14
 msgid "Remember Me"
 msgstr "Prisiminti"
+
+#~ msgid "(last commented"
+#~ msgstr "(paskutinis komentaras prieš"
+
+#~ msgid "hours ago)"
+#~ msgstr "valandų)"
 
 #~ msgid "Select the users to share with:"
 #~ msgstr "Vartotojai, kuriem bus matomas."

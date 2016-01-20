@@ -93,6 +93,7 @@ class WorkCreateView(CreateViewWrapper):
 
     def get_form_kwargs(self):
         kwargs = super(WorkCreateView, self).get_form_kwargs()
+        kwargs['task_instance'] = Task.objects.get(pk=self.kwargs['task'])
         kwargs['request'] = self.request
         return kwargs
 

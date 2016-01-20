@@ -98,6 +98,7 @@ class StepCreateView(CreateViewWrapper):
 
     def get_form_kwargs(self):
         kwargs = super(StepCreateView, self).get_form_kwargs()
+        kwargs['plan_instance'] = Plan.objects.get(pk=self.kwargs['plan'])
         kwargs['request'] = self.request
         return kwargs
 
@@ -145,6 +146,13 @@ class StepDetailView(DetailViewWrapper, CommentsContentTypeWrapper):
     model = Step
     slug_field = "pk"
     template_name = "step/detail.html"
+
+    def get_success_url(self):
+        messages.success(
+            self.request, _(
+                "%s succesfully created" %
+                self.form_class._meta.model.__name__))
+        return self.request.path
 
     def get_context_data(self, **kwargs):
         context = super(StepDetailView, self).get_context_data(**kwargs)

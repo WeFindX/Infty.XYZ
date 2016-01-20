@@ -1,3 +1,26 @@
+def _translation_post_save(sender, instance, created, *args, **kwargs):
+    """
+    Do after translation save
+    """
+    # Copy fields to parent content object, if language match
+    if instance.language == instance.content_object.language:
+        ignored_fields = ['language', 'language_id', 'id']
+        for field in instance._meta.get_all_field_names():
+            if field in instance.content_object._meta.get_all_field_names():
+                if field in ignored_fields:
+                    continue
+                if getattr(instance.content_object, field) != getattr(instance, field):
+                    setattr(instance.content_object, field, getattr(instance, field))
+    
+    # Save the translation language to object itself for faster filtering
+    instance.content_object.lang.add(instance.language)
+    instance.content_object.save()
+
+def _translation_post_delete(sender, instance, *args, **kwargs):
+	# Remove the translation language upon deletion of translation
+    instance.content_object.lang.remove(instance.language)
+    instance.content_object.save()
+
 def _content_type_post_save(sender, instance, created, *args, **kwargs):
     """
     Create default translation
@@ -26,12 +49,3 @@ def _content_type_post_save(sender, instance, created, *args, **kwargs):
             setattr(translation, field, getattr(instance, field))
 
         translation.save()
-    else:
-        translations = Translation.objects.filter(
-            content_type=content_type, object_id=instance.id
-        )
-
-        if translations.count == 1:
-            for field in fields:
-                setattr(translations[0], field, getattr(instance, field))
-            translations[0].save()

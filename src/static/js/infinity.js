@@ -26,3 +26,17 @@ $(function() {
     $("#div_id_url").show();
   }
 });
+
+$(function(){
+
+    // Scroll screen horizontally by one screen
+    $('#scroll_arrowleft').on("click",function(event){
+      $( "div.row-horizon" ).scrollLeft( -$(window).width() );
+			event.preventDefault();
+    });
+
+    $('#scroll_arrowright').on("click",function(event){
+      $( "div.row-horizon" ).scrollLeft( $(window).width() );
+			event.preventDefault();
+    });
+});

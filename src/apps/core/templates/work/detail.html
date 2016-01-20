@@ -35,7 +35,19 @@ function showLess(){
       <div align="right" id="stats">
         <span onmouseover="showMore()"><b>[<u>needs ${{ object.get_remain_usd|floatformat:2 }} for funding {{ object.not_funded_hours|floatformat:2}} hours</u>]</b></span>
       </div>
-      attempt on task <a href="{% url "task-detail" object.task.pk %}">{{object.task}}</a></br>
+      attempt on task <a href="{% url "task-detail" object.task.pk %}">
+
+		  {% if object.task.personal %}
+		    {% if request.user in object.task.sharewith or request.user == object.task.user %}
+		       {{ object.task }}
+		    {% else %}
+               {% trans "private" %} {% trans "task" %} (by {{ object.task.user.username }})
+			{% endif %}
+		  {% else %}
+		  {{ object.task }}
+		  {% endif %}
+      
+      </a></br>
       translations: 
       <!-- translations -->
     {% for translation in translations %}
@@ -98,11 +110,28 @@ function showLess(){
 {% for object in work_list %}
     <ul class="list-group">
       <li class="list-group-item">
-			{% if object.is_link %}
-			<span class="badge">{% trans "link" %}</span>
-			{% endif %}
-         <a href="{% url "work-detail" object.pk %}">{{object.name}}</a> 
-         <p>{{object.description|markdown|truncatewords_html:35}}</p>
+
+            {% if object.is_link %}
+            <span class="badge">{% trans "link" %}</span>
+            {% endif %}
+            {% if object.personal %}
+                {% if user.is_anonymous %}
+                <i class="fa fa-lock"></i>
+                {% else %}
+                <i class="fa {% if object.user == request.user %}fa-lock{% else %}fa-flag{% endif %}"></i>
+                {% endif %}
+                {% if request.user in object.sharewith or request.user == object.user %}
+                    <a href="{% url "work-detail" object.pk %}?lang={{ request.LANGUAGE_CODE }}">{{object.name}}</a>
+                    <p>{{object.description|markdown|truncatewords_html:35}}</p>
+                {% else %}
+					<a href="{% url "work-detail" object.pk %}?lang={{ request.LANGUAGE_CODE }}">{% trans "Private" %} {% trans "work" %}.</a>
+					<p>{% trans "Request access:" %} [<a href="{% url 'user-detail' object.user.username %}">{{object.user.username}}</a>]</p>
+                {% endif %}
+            {% else %}
+                <a href="{% url "work-detail" object.pk %}?lang={{ request.LANGUAGE_CODE }}">{{object.name}}</a>
+                <p>{{object.description|markdown|truncatewords_html:35}}</p>
+            {% endif %}
+
       </li>
     </ul>
 {% endfor %}

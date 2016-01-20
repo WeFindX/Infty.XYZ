@@ -66,7 +66,17 @@ $(document).ready( function() {
         -->
       </div>
  
-      {% trans "category:" %} <a href="">{{ object.type }}</a>{% if object.need %}, {% trans "related need:" %} <a href="{% url "need-detail" object.need.pk %}">{{object.need }}</a>{% endif %}<br/>
+	  {% trans "category:" %} <a href="">{{ object.type }}</a>{% if object.need %}, {% trans "related need:" %} <a href="{% url "need-detail" object.need.pk %}">
+		  {% if object.need.personal %}
+		    {% if request.user in object.need.sharewith or request.user == object.need.user %}
+		       {{ object.need }}
+		    {% else %}
+               {% trans "private" %} {% trans "need" %} (by {{ object.need.user.username }})
+			{% endif %}
+		  {% else %}
+		  {{ object.need }}
+		  {% endif %}
+	  </a>{% endif %}<br/>
       {% trans "translations:" %}
       <!-- translations -->
       {% for translation in translations %}
@@ -110,11 +120,26 @@ $(document).ready( function() {
   {% for object in idea_list %}
       <ul class="list-group">
         <li class="list-group-item"> 
-			{% if object.is_link %}
-			<span class="badge">{% trans "link" %}</span>
-			{% endif %}
-           <a href="{% url "idea-detail" object.pk %}">{{object.name}}</a>
-           <p>{{object.description|markdown|truncatewords_html:35}}</p>
+            {% if object.is_link %}
+            <span class="badge">{% trans "link" %}</span>
+            {% endif %}
+            {% if object.personal %}
+                {% if user.is_anonymous %}
+                <i class="fa fa-lock"></i>
+                {% else %}
+                <i class="fa {% if object.user == request.user %}fa-lock{% else %}fa-flag{% endif %}"></i>
+                {% endif %}
+                {% if request.user in object.sharewith or request.user == object.user %}
+                    <a href="{% url "idea-detail" object.pk %}?lang={{ request.LANGUAGE_CODE }}">{{object.name}}</a>
+                    <p>{{object.description|markdown|truncatewords_html:35}}</p>
+                {% else %}
+					<a href="{% url "idea-detail" object.pk %}?lang={{ request.LANGUAGE_CODE }}">{% trans "Private" %} {% trans "idea" %}.</a>
+					<p>{% trans "Request access:" %} [<a href="{% url 'user-detail' object.user.username %}">{{object.user.username}}</a>]</p>
+                {% endif %}
+            {% else %}
+                <a href="{% url "idea-detail" object.pk %}?lang={{ request.LANGUAGE_CODE }}">{{object.name}}</a>
+                <p>{{object.description|markdown|truncatewords_html:35}}</p>
+            {% endif %}
         </li>
       </ul>
   {% endfor %}

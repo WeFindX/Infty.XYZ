@@ -42,7 +42,9 @@
 
 
     <div style="margin-left: 165px; position: absolute; top: 70px;">
-        <input autocomplete="off" class="btn-lg" tabindex="-1" type="url" aria-hidden="true" size="35" style="height: 48px; font-weight: normal; text-transform: none; color: white; background-color: #c0c0c0;font-size: 18px; font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif"><input class="btn-lg" type="submit" value="{% trans "Search" %}" style="height: 48px; color: GrayText;">
+        <form action="{{request.get_full_path}}" method="get">
+        <input name="s" autocomplete="off" class="btn-lg" tabindex="-1" type="text" aria-hidden="true" size="35" style="height: 48px; font-weight: normal; text-transform: none; color: white; background-color: #c0c0c0;font-size: 18px; font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif"><input class="btn-lg" type="submit" value="{% trans "Search" %}" style="height: 48px; color: GrayText;">
+        </form>
     </div>
 </div>
 
@@ -51,13 +53,23 @@
 
     <link rel="stylesheet" href="/static/css/bootstrap-horizon.css">
 
+    <div id="scroll_arrowleft"></div>
+    <div id="scroll_arrowright"></div>
+
     <div class="row row-horizon">
 
-{% if request.get_full_path == '/i' %}
+<!-- start of Need -->
+
         <div class="panel panel-default col-md-7 block-content">
             <div class="panel-heading">
                 {% trans "Needs" %}
-                &nbsp; <a href="{% url "definition-create" %}"><i class="fa fa-plus-circle"></i></a>&nbsp; - <b>{% trans "share a need" %}</b>
+                &nbsp; <a href="{% url "need-create" %}"><i class="fa fa-plus-circle"></i></a>&nbsp; - <b>
+                    {% if request.get_full_path == '/i' %}
+                    {% trans "share a need" %}
+                    {% else %}
+                    {% trans "write an open letter" %}
+                    {% endif %}
+                </b>
 
                 <div style="display:inline-block; float: right;">
                     <form method="post" style="display:inline;">{% csrf_token %}
@@ -72,7 +84,6 @@
 
             <div class="panel-body">
                 {% if need_list %}
-                    <p align="center"><i>{% trans "(last commented" %} {{ need_hours }} {% trans "hours ago)" %}</i></p>
                     {% for need in need_list %}
                         {% if need.translation %} {# if need translated #}
 
@@ -125,13 +136,9 @@
                 {% endif %}
             </div>
         </div>
-{% endif %}
+<!-- end of Need -->
 
-    {% if request.get_full_path == '/i' %}
         <div class="panel panel-default col-md-4 block-content">
-    {% else %}
-        <div class="panel panel-default col-md-7 block-content">
-    {% endif %}
             <div class="panel-heading">
                 <a href="{% url "goal-list" %}">{% trans "Goals" %}</a>
                 &nbsp; <a href="{% url "goal-create" %}"><i class="fa fa-plus-circle"></i></a>&nbsp; - <b>{% trans "define a problem" %}</b>
@@ -149,7 +156,6 @@
 
             <div class="panel-body">
                 {% if goal_list %}
-                    <p align="center"><i>{% trans "(last commented" %} {{ goal_hours }} {% trans "hours ago)" %}</i></p>
                     {% for goal in goal_list %}
                         {% if goal.translation %} {# if goal translated #}
 
@@ -228,7 +234,6 @@
             <div class="panel-body">
                 {% if idea_list %}
                 <p align="center">
-                <i>{% trans "(last commented" %} {{ idea_hours }} {% trans "hours ago)" %}</i>
                 </p>
                 {% for idea in idea_list %}
 
@@ -316,7 +321,6 @@
             <div class="panel-body">
                 {% if plan_list %}
 
-                <p align="center"><i>{% trans "(last commented" %} {{ plan_hours }} {% trans "hours ago)" %}</i></p>
                 {% for plan in plan_list %}
                     {% if plan.translation %}  {# if plan translated #}
 
@@ -402,7 +406,6 @@
             <div class="panel-body">
                 {% if step_list %}
 
-                <p align="center"><i>{% trans "(last commented" %} {{ step_hours }} {% trans "hours ago)" %}</i></p>
 
                 {% for step in step_list %}
                     {% if step.translation %} {# if step translated #}
@@ -491,7 +494,6 @@
 
             <div class="panel-body">
                 {% if task_list %}
-                <p align="center"><i>{% trans "(last commented" %} {{ task_hours }} {% trans "hours ago)" %}</i></p>
 
                 {% for task in task_list %}
                     {% if task.translation %} {# if task translated #}
@@ -576,7 +578,6 @@
 
             <div class="panel-body">
                 {% if work_list %}
-                <p align="center"><i>{% trans "(last commented" %} {{ work_hours }} {% trans "hours ago)" %}</i></p>
 
                 {% for work in work_list %}
                     {% if work.translation %} {# if task translated #}

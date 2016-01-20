@@ -7,8 +7,11 @@ from django.contrib.contenttypes.models import ContentType
 from django.conf import settings
 from django_markdown.models import MarkdownField
 from django.db.models.signals import post_save
+from django.db.models.signals import post_delete
 from hours.models import HourValue
 from ..signals import _content_type_post_save
+from ..signals import _translation_post_save
+from ..signals import _translation_post_delete
 
 
 class BaseContentModel(models.Model):
@@ -83,6 +86,12 @@ class BaseContentModel(models.Model):
         'Language',
         blank=True,
         null=True,
+    )
+
+    lang = models.ManyToManyField(
+        'Language',
+        blank=True,
+        related_name='+',
     )
 
     total_donated = models.DecimalField(
@@ -731,7 +740,7 @@ class Language(models.Model):
     http_accept_language = models.CharField(max_length=255, blank=True,
                                             null=True)
     omegawiki_language_id = models.PositiveIntegerField(null=True, blank=True)
-    language_code = models.CharField(max_length=5)
+    language_code = models.CharField(max_length=8)
 
     def __unicode__(self):
         try:
@@ -746,3 +755,5 @@ post_save.connect(_content_type_post_save, sender=Plan)
 post_save.connect(_content_type_post_save, sender=Step)
 post_save.connect(_content_type_post_save, sender=Task)
 post_save.connect(_content_type_post_save, sender=Work)
+post_save.connect(_translation_post_save, sender=Translation)
+post_delete.connect(_translation_post_delete, sender=Translation)

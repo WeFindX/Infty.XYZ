@@ -119,8 +119,9 @@
               {% else %}
               {% endif %}
               {% if request.get_full_path == "/!" %}
+              <li><a href="#" class="btn-lg" style="color: white; background-color: black;">{% trans "public index" %}</a></li>
               {% else %}
-              <li><a href="{% url "index" %}" class="btn-lg" style="color: white; background-color: black;">{% trans "public index" %}</a></li>
+              <li><a href="{% url "index" %}" class="btn-lg" style="color: white; background-color: grey;">{% trans "public index" %}</a></li>
               {% endif %}
               {% if request.user.is_authenticated %}
               {% else %}
@@ -133,7 +134,11 @@
               <li>
               <a href="{% url "account_logout" %}"><b>{% trans "Logout" %}</b></a>
               </li>
+              {% if request.get_full_path == "/i" %}
+              <li><a href="#" class="btn-lg" style="color: white; background-color: black;">{% trans "private inbox" %}</a></li>
+              {% else %}
               <li><a href="{% url "inbox" %}" class="btn-lg" style="color: white; background-color: grey;">{% trans "private inbox" %}</a></li>
+              {% endif %}
               <li>
               <a href="{% url "user-detail" request.user.username %}"><b>[{{ request.user }}]</b></a>
               </li>

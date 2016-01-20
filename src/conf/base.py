@@ -70,7 +70,7 @@ LANGUAGES = (
     ('ru', _('Russian')),
 #   ('ja', _('Japanese')),
 #   ('fr', _('French')),
-    ('zh-cn', _('Chinese')),
+    ('zh-hans', _('Chinese')),
 #   ('de', _('German')),
     ('lt', _('Lithuanian')),
 #   ('uk', _('Ukrainian'))

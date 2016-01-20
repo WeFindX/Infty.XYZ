@@ -83,7 +83,19 @@ $(document).ready( function() {
     </span>
     </div>
 
-    {% trans "approach to realizing idea" %} <a href="{% url "idea-detail" object.idea.pk %}">{{object.idea }}</a><br/>
+    {% trans "approach to realizing idea" %} <a href="{% url "idea-detail" object.idea.pk %}">
+        
+		  {% if object.idea.personal %}
+		    {% if request.user in object.idea.sharewith or request.user == object.idea.user %}
+		       {{ object.idea }}
+		    {% else %}
+               {% trans "private" %} {% trans "idea" %} (by {{ object.idea.user.username }})
+			{% endif %}
+		  {% else %}
+		  {{ object.idea }}
+		  {% endif %}
+    
+    </a><br/>
     {% trans "translations:" %}
     <!-- translations -->
     {% for translation in translations %}
@@ -135,8 +147,24 @@ $(document).ready( function() {
         {% if step.is_link %}
         <span class="badge">{% trans "link" %}</span>
         {% endif %}
-        <b>[{{step.not_funded_hours|floatformat:1}} h]</b> <a href="{% url "step-detail" step.pk %}">{{step.name}}</a> 
-        <p>{{step.objective|markdown|truncatewords_html:35}}</p>
+        {% if step.personal %}
+            {% if user.is_anonymous %}
+            <i class="fa fa-lock"></i>
+            {% else %}
+            <i class="fa {% if step.user == request.user %}fa-lock{% else %}fa-flag{% endif %}"></i>
+            {% endif %}
+            {% if request.user in object.sharewith or request.user == step.user %}
+                <b>[{{step.not_funded_hours|floatformat:1}} h]</b> <a href="{% url "step-detail" step.pk %}?lang={{ request.LANGUAGE_CODE }}">{{step.name}}</a>
+                <p>{{step.objective|markdown|truncatewords_html:35}}</p>
+            {% else %}
+                <a href="{% url "step-detail" step.pk %}?lang={{ request.LANGUAGE_CODE }}">{% trans "Private" %} {% trans "step" %}.</a>
+                <p>{% trans "Request access:" %} [<a href="{% url 'user-detail' object.user.username %}">{{step.user.username}}</a>]</p>
+            {% endif %}
+        {% else %}
+            <b>[{{step.not_funded_hours|floatformat:1}} h]</b> <a href="{% url "step-detail" step.pk %}?lang={{ request.LANGUAGE_CODE }}">{{step.name}}</a> 
+            <p>{{step.objective|markdown|truncatewords_html:35}}</p>
+        {% endif %}
+
         </li>
         {% endfor %}
     </ul>
