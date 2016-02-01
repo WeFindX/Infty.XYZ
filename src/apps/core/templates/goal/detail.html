@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% load crispy_forms_tags %}
+{% load django_markdown %}
+
+{% load staticfiles %}
+{% load country_isocode %}
+
+{% block extra_js %}
+
+  {% if request|get_country_by_ip != 'CN' %}
+   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+  {% else %}  
+   <script src="{% static "cdn/jqueryui/1.11.2/jquery-ui.min.js" %}"></script>
+  {% endif %}
+  
+{% endblock extra_js %}
+
+
+{% block title %}g: {{object.name}}{% endblock title %}
+
+{% block content %}
+
+<script>
+function showMore(){
+    document.getElementById("stats").innerHTML = "<span onmouseout='showLess()'>[<u>assumed</u> {{ object.total_assumed|floatformat:2 }} h, <u>donated</u> {{ object.total_donated|floatformat:2 }} ħ, <u>claimed</u> {{ object.total_claimed|floatformat:2 }}, <u>matched</u> {{ object.total_matched|floatformat:2}} ḥ]</span>";
+}
+
+function showLess(){
+    document.getElementById("stats").innerHTML = "<span onmouseover='showMore()'><b>[<u>{% trans "needs" %} ${{ object.get_remain_usd|floatformat:2 }} {% trans "for funding" %} {{ object.not_funded_hours|floatformat:2}} {% trans "hours" %}</u>]</b></span>";
+}
+</script>
+
+<script>
+$(document).ready( function() {
+    $(".tiptext").mouseover(function() {
+        $(this).children(".description").show();
+    }).mouseout(function() {
+        $(this).children(".description").hide();
+    });
+});
+</script>
+
+<div class="panel panel-default box col-sm-12 col-md-7">
+  <div class="panel-body">
+      <div class="alignleft"><a href="#id_name" onclick="getfocus()"><i class="fa fa-share"></i></a></div>
+
+      <div class="alignright">
+          <form style="text-align: right;" action="/subscribe/" method="post" accept-charset="utf-8">{% csrf_token %}
+                <input type="hidden" value="{{ content_type }}" id="id_content_type" name="content_type">
+                <input type="hidden" value="{{ object_id }}" id="id_object_id" name="object_id">
+                <p><input type="submit" value="{% if is_subscribed %}{% trans "Unsubscribe" %}{% else %}{% trans "Subscribe" %}{% endif %}"></p> 
+          </form>
+      </div>
+      <div style="clear:both;"></div>
+
+      <div align="right" id="stats">
+          <span onmouseover="showMore()"><b>[<u>{% trans "needs" %} ${{ object.get_remain_usd|floatformat:2 }} {% trans "for funding" %} {{ object.not_funded_hours|floatformat:2}} {% trans "hours" %}</u>]</b></span>
+      </div>
+      <div align="right">
+        <!--
+          <span class="tiptext">[<u>{% trans "hyper-equity" %}</u>: {{ object.get_equity|floatformat:2 }}% ḥ]
+              <div class="description" align="left">{% trans "A fixed percentage of all the future <b>ḥ</b> (<u>time and money spent</u>), which indicates how much goal creator owns of all projects under this problem." %}</div>
+        </span>
+        -->
+      </div>
+ 
+	  {% trans "category:" %} <a href="">{{ object.type }}</a>{% if object.need %}, {% trans "related need:" %} <a href="{% url "need-detail" object.need.pk %}">
+		  {% if object.need.personal %}
+		    {% if request.user in object.need.sharewith or request.user == object.need.user %}
+		       {{ object.need }}
+		    {% else %}
+               {% trans "private" %} {% trans "need" %} (by {{ object.need.user.username }})
+			{% endif %}
+		  {% else %}
+		  {{ object.need }}
+		  {% endif %}
+	  </a>{% endif %}<br/>
+      {% trans "translations:" %}
+      <!-- translations -->
+      {% for translation in translations %}
+      {% if translation.language.language_code %}
+      <a title="{{ translation.language.name }}" href="{% url "goal-detail" object.id %}?lang={{translation.language.language_code }}">
+          [{{ translation.language.language_code }}]
+      </a>
+      {% endif %}
+      {% endfor %}
+      <a title="Create new Translation" href="{{ translate_url }}">[+]</a>
+      <!-- /translations-->
+
+      <h1>{% if not translation %}{{object.name}}{% else %} {{ translation.name }} {% endif %}</h1>
+
+        <div>
+            {% if object.is_historical %}
+                <span class="badge" style="background-color: brown;">{% trans "historical" %}</span>
+                <br />
+            {% endif %}
+            {% if object.is_link %}
+            <i><span style="color:grey;">{% trans "Source:" %} <a href="{{ object.url }}" style="color:grey;">{{ object.url }}</a>.</span></i>
+            {% endif %}
+        </div>
+
+        {% if object.user == request.user %}[<a href="{% if not translation %}{% url "goal-update" object.pk %}{% else %}{% url "update-translation" translation.pk %}{% endif %}">{% trans "edit" %}</a>, <a href="{% if not translation %}{% url "goal-delete" object.pk %}{% else %}{% url "delete-translation" translation.pk %}{% endif %}">{% trans "delete" %}</a>]<br />{% endif %}
+
+  <br/>
+
+  {% if not translation %}
+  {{object.reason|markdown}}
+  {% else %}
+  {{translation.reason|markdown}}
+  {% endif %}
+  <div align="right">--[<a href="{% url 'user-detail' object.user.username %}">{{object.user}}</a>], {{object.created_at}}</div>
+
+  {% if object.personal %}<i class="fa {% if object.user == request.user %}fa-lock{% else %}fa-flag{% endif %}"></i> [<u>{% trans "shared with:" %}</u> {% for member in object.sharewith.all %} <a href="{% url 'user-detail' member.username %}">{{ member.username }}</a>{%if not forloop.last%}, {%endif%}{% endfor %}]{% endif %}
+  </div>
+
+  <div class="panel-heading">{% trans "Ideas" %}</div>
+  <div class="panel-body">
+  {% for object in idea_list %}
+      <ul class="list-group">
+        <li class="list-group-item"> 
+            {% if object.is_link %}
+            <span class="badge">{% trans "link" %}</span>
+            {% endif %}
+            {% if object.personal %}
+                {% if user.is_anonymous %}
+                <i class="fa fa-lock"></i>
+                {% else %}
+                <i class="fa {% if object.user == request.user %}fa-lock{% else %}fa-flag{% endif %}"></i>
+                {% endif %}
+                {% if request.user in object.sharewith or request.user == object.user %}
+                    <a href="{% url "idea-detail" object.pk %}?lang={{ request.LANGUAGE_CODE }}">{{object.name}}</a>
+                    <p>{{object.description|markdown|truncatewords_html:35}}</p>
+                {% else %}
+					<a href="{% url "idea-detail" object.pk %}?lang={{ request.LANGUAGE_CODE }}">{% trans "Private" %} {% trans "idea" %}.</a>
+					<p>{% trans "Request access:" %} [<a href="{% url 'user-detail' object.user.username %}">{{object.user.username}}</a>]</p>
+                {% endif %}
+            {% else %}
+                <a href="{% url "idea-detail" object.pk %}?lang={{ request.LANGUAGE_CODE }}">{{object.name}}</a>
+                <p>{{object.description|markdown|truncatewords_html:35}}</p>
+            {% endif %}
+        </li>
+      </ul>
+  {% endfor %}
+  <a  href="{% url "idea-create" object.pk %}">{% trans "+New Idea" %}</a>
+  </div>
+</div>
+
+        	
+
+
+{# Include comment list with transactions #}
+{% include "comment/list.html" %}
+
+
+{% endblock content %}

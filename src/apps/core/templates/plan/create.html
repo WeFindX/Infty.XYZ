@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% load django_markdown %}
+
+{% block title %}{% trans "Plan create" %}{% endblock title %}
+
+{% block content %}
+
+<h1>{% trans "Plan create" %}</h1>
+<br/>
+<br/>
+{% if idea_object %}
+<table class="table">
+    <tr>
+        <td>{% trans "Idea" %}</td>
+        <td>
+
+            <a href="{% url "idea-detail" idea_object.pk %}">{{idea_object}}</a>
+
+        </td>
+    </tr>
+</table>
+{% endif %}
+<div>
+    
+</div>
+<br/>
+
+{% crispy form %}
+{% markdown_media %}
+
+{% endblock content %}
+{% block select2_js %}
+<script type="text/javascript">
+(function ($) {
+
+    var init = function ($element, options) {
+        $element.select2(options);
+    };
+
+    var initHeavy = function ($element, options) {
+        var settings = $.extend({
+            allowClear: true,
+            ajax: {
+                data: function (params) {
+                    return {
+                        term: params.term,
+                        page: params.page,
+                        field_id: $element.data('field_id'),
+                        goal_id: $("#id_goal").val()
+                    };
+                },
+                processResults: function (data, page) {
+                    return {
+                        results: data.results,
+                        pagination: {
+                            more: data.more
+                        }
+                    };
+                }
+            }
+        }, options);
+
+        $element.select2(settings);
+    };
+
+    $.fn.djangoSelect2 = function (options) {
+        var settings = $.extend({}, options);
+        $.each(this, function (i, element) {
+            var $element = $(element);
+            if ($element.hasClass('django-select2-heavy')) {
+                initHeavy($element, settings);
+            } else {
+                init($element, settings);
+            }
+        });
+        return this;
+    };
+
+    $(function () {
+        $('.django-select2').djangoSelect2();
+    });
+
+}(this.jQuery));
+</script>
+{% endblock select2_js %}
+

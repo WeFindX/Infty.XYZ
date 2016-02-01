@@ -1,0 +1,349 @@
+/*! project specific CSS goes here. */
+
+* {
+    font-size: 17.5px;
+    /*word-break: break-all;*/
+}
+img{
+  max-width: 100%;
+}
+
+/* fix for select2 and bootstrap */
+.select2-container {
+  padding: 0px;
+  border-width: 0px;
+}
+.select2-container .select2-choice {
+  height: 38px;
+  line-height: 38px;
+}
+
+.search-block .form-actions{
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+
+/* List view */
+
+.glyphicon { margin-right:5px; }
+.thumbnail
+{
+    margin-bottom: 20px;
+    padding: 10px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+
+.item.list-group-item
+{
+    float: none;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+.item.list-group-item:nth-of-type(odd):hover,.item.list-group-item:hover
+{
+    /*background: #428bca;*/
+}
+
+.item.list-group-item .list-group-image
+{
+    margin-right: 10px;
+}
+.item.list-group-item .thumbnail
+{
+    margin-bottom: 0px;
+}
+.item.list-group-item .caption
+{
+    padding: 9px 9px 0px 9px;
+}
+.item.list-group-item:nth-of-type(odd)
+{
+    background: #eeeeee;
+}
+
+.item.list-group-item:before, .item.list-group-item:after
+{
+    display: table;
+    content: " ";
+}
+
+.item.list-group-item img
+{
+    /*float: left;*/
+}
+.item.list-group-item:after
+{
+    clear: both;
+}
+.list-group-item-text
+{
+    margin: 0 0 11px;
+}
+
+/**
+ * Centered table
+ */
+table.table.centered
+{
+    margin: 0px auto;
+    width: 82%;
+}
+
+/* end of item list */
+
+.choose-definition, .create-button > .btn{
+    float: right;
+    width: 100%;
+}
+
+.hints-block {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.hint {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.hint-text {
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #e7e7e7;
+    border-radius: 4px;
+    padding: 7px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+}
+.alignleft {
+    float: left;
+}
+.alignright {
+    float: right;
+}
+
+/* for the logo */
+.infin {
+    font-size: 100px;
+    color: black;
+    font-family: Cantarell;
+}
+
+.ity {
+    font-size: 100px;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-family: Cantarell;
+}
+
+.definition {
+    font-size: 80px;
+    color: blue;
+    font-family: Cantarell;
+}
+
+.brand {
+    position: relative;
+    padding-left: 20px;
+    font-size: 24px;
+    transform:scale(1.2,1);
+    -webkit-transform:scale(1.2,1);
+    display:inline-block;
+}
+
+/* for menu item links */
+.nav>li>a {
+    display: inline-block;
+}
+
+.alert-error {
+    background-color: #ff4136;
+    border-color: #ff1103;
+    color: #ffffff;
+}
+.box{
+    float: left;
+    padding: 0px 15px 0px 0px;
+    margin: -15px 15px 30px 5px;
+}
+.comment{
+    display: inline;
+}
+.panel{
+    border-color: #ccc;
+    border-width: 0px 1px 1px 1px;
+    border-radius: 0px;
+}
+.input-comment{
+    display: inline-block;
+}
+.top-space{
+    padding-top: 25px;
+}
+.transaction{
+    border: 1px solid #c5c5c5;
+    display: table;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    background-color: #f5f5f5;
+    border-color: transparent;
+}
+
+.markItUpEditor {
+    width: 100% !important;
+}
+
+.markItUp {
+    width: 100% !important;
+}
+
+.tiptext {
+    background:#ffffff;
+    padding:5px;
+    width:100px;
+}
+.description {
+    display:none;
+    position:absolute;
+    left: 230px;
+    border:1px solid #000;
+    width:400px;
+    background: #ffffff;
+    padding: 5px;
+}
+
+.invite_fd {
+    background:#28b62c;
+    color:#ffffff;
+    height:2.4em;
+    padding:.5em;
+    position:absolute;
+    bottom:5px;
+    width:13em;
+    right:5px;
+    border: 1px solid;
+    border-radius: 4px;
+}
+
+.invite_fx {
+    position:fixed;
+    bottom:0;
+}
+
+a:visited{
+         color: #551a8b;
+}
+
+.block-content {
+    word-break: break-all;
+}
+
+#div_id_sharewith {
+    display: none;
+}
+
+#div_id_define {
+    display: none;
+}
+
+#div_id_url {
+    display: none;
+}
+
+.octocat-login {
+    color: #000000;
+    font-size: 144px;
+}
+
+.start-example {
+    color: grey;
+    font-size: 24px;
+    font-style: italic;
+}
+
+.expression-example {
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.definition-example {
+    color: grey;
+    font-size: 24px;
+}
+#id_language {
+    background-color: black;
+    color: white;
+}
+
+.fa-thumbs-o-up:hover {
+	color: green;
+	cursor: pointer;
+	cursor: hand;
+}
+.fa-thumbs-up:hover {
+	cursor: pointer;
+	cursor: hand;
+}
+.fa-thumbs-o-down:hover {
+	color: green;
+	cursor: pointer;
+	cursor: hand;
+}
+.fa-thumbs-down:hover {
+	cursor: pointer;
+	cursor: hand;
+}
+
+.cursor-move {
+    cursor: move;
+}
+
+.btn-dark {
+  color: #fff;
+  background-color: #000;
+  border-color: #505050;
+}
+
+#scroll_arrowleft {
+    position:absolute;
+	background-image: url(/static/fonts/arrow-left.svg);
+	background-position-x: 50%;
+	background-position-y: 50%;
+	background-position: center;
+	background-size: 60px 60px;
+	background-repeat: no-repeat;
+	width: 29px;
+	height: 300px;
+	cursor: pointer;
+    bottom:30%;
+    left:2px;
+	float: left;
+	margin-left: auto;
+	margin-right: auto;
+    z-index: 1;
+}
+
+#scroll_arrowright {
+    position:absolute;
+	background-image: url(/static/fonts/arrow-right.svg);
+	background-position-x: 50%;
+	background-position-y: 50%;
+	background-position: center;
+	background-size: 60px 60px;
+	background-repeat: no-repeat;
+	width: 29px;
+	height: 300px;
+	cursor: pointer;
+    bottom:30%;
+    right:2px;
+	margin-left: auto;
+	margin-right: auto;
+    z-index: 1;
+}
+
+

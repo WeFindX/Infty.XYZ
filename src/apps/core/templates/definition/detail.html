@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% load crispy_forms_tags %}
+{% load django_markdown %}
+
+
+{% block title %}n: {{object.name}}{% endblock title %}
+
+{% block content %}
+
+
+<script>
+function showMore(){
+    document.getElementById("stats").innerHTML = "<span onmouseout='showLess()'>[<u>assumed</u> {{ object.total_assumed|floatformat:2 }} h, <u>donated</u> {{ object.total_donated|floatformat:2 }} ħ, <u>claimed</u> {{ object.total_claimed|floatformat:2 }}, <u>matched</u> {{ object.total_matched|floatformat:2}} ḥ]</span>";
+}
+
+function showLess(){
+    document.getElementById("stats").innerHTML = "<span onmouseover='showMore()'><b>[<u>needs ${{ object.get_remain_usd|floatformat:2 }} for funding {{ object.not_funded_hours|floatformat:2}} hours</u>]</b></span>";
+}
+</script>
+
+<div class="panel panel-default box col-sm-12 col-md-7">
+<div class="panel-body">
+
+    <div align="right" id="stats">
+        <span onmouseover="showMore()"><b>[<u>needs ${{ object.get_remain_usd|floatformat:2 }} for funding {{ object.not_funded_hours|floatformat:2}} hours</u>]</b></span>
+      </div>
+
+<u>expression</u>: {{object.name}} (<u>lang_id</u>: {{object.language.id}}) 
+
+<h2><u>Definition</u>: {{object.definition}}</h2>
+{% if object.user == request.user %}[<a href="{% url "definition-update" object.pk %}">Edit</a>]{%endif%}
+
+<br/>
+<br/>
+<div class="breadcrumb">
+Defined Meaning ID: {{object.defined_meaning_id}}
+</div>
+
+<div align="right">--[<a href="{% url 'user-detail' object.user.username %}">{{object.user}}</a>], {{object.created_at}}</div>
+</div>
+
+<br/>
+<br/>
+<div>
+    
+</div>
+
+  <div class="panel-heading">Needs</div>
+  <div class="panel-body">
+  {% for object in need_list %}
+      <ul class="list-group">
+        <li class="list-group-item">
+
+            {% if object.is_link %}
+            <span class="badge">{% trans "link" %}</span>
+            {% endif %}
+            {% if object.personal %}
+                {% if user.is_anonymous %}
+                <i class="fa fa-lock"></i>
+                {% else %}
+                <i class="fa {% if object.user == request.user %}fa-lock{% else %}fa-flag{% endif %}"></i>
+                {% endif %}
+                {% if request.user in object.sharewith or request.user == object.user %}
+                    <a href="{% url "need-detail" object.pk %}?lang={{ request.LANGUAGE_CODE }}">{{object.name}}</a>
+                    <p>{{object.content|markdown|truncatewords_html:35}}</p>
+                {% else %}
+					<a href="{% url "need-detail" object.pk %}?lang={{ request.LANGUAGE_CODE }}">{% trans "Private" %} {% trans "need" %}.</a>
+					<p>{% trans "Request access:" %} [<a href="{% url 'user-detail' object.user.username %}">{{object.user.username}}</a>]</p>
+                {% endif %}
+            {% else %}
+                <a href="{% url "need-detail" object.pk %}?lang={{ request.LANGUAGE_CODE }}">{{object.name}}</a>
+                <p>{{object.content|markdown|truncatewords_html:35}}</p>
+            {% endif %}
+        </li>
+      </ul>
+  {% endfor %}
+  <!--
+  <a class="btn btn-info" href="{% url "goal-create" object.pk %}">
+      +Add Need
+  </a>
+  -->
+  </div>
+</div>
+
+
+{% include "comment/list.html" %}
+
+{% endblock content %}
