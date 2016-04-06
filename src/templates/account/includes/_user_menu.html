@@ -1,0 +1,26 @@
+{% load i18n %}
+{% load country_isocode %}
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> <span class="caret"></span></a>
+<ul class="dropdown-menu">
+    <li class="dropdown-header">{{ request.user }}</li>
+    <li><a href="{% url "inbox" %}"><i class="fa fa-user"></i> {% trans "Inbox" %}</a></li>
+    <li><a href="{% url "invite:send" %}"><i class="fa fa-envelope"></i>({{user.invitationoption.invitations_left}}) Invite a friend</a></li>
+    <li><a href="{% url "account_logout" %}"><i class="fa fa-sign-out"></i> {% trans "Logout" %}</a></li>
+    <li role="separator" class="divider"></li>
+    <li class="dropdown-header">Compose</li>
+    <li><a href="{% url "goal-create" %}"><i class="fa fa-bomb"></i> {% trans "Problem" %}</a></li>
+    <li><a href="{% url "idea-create" %}"><i class="fa fa-lightbulb-o"></i> {% trans "Solution" %}</a></li>
+    <li><a href="{% url "plan-create" %}"><i class="fa fa-coffee"></i> {% trans "Project" %}</a></li>
+    <li class="dropdown-header">Help</li>
+    {% if request|get_country_by_ip != 'CN' %}
+    <li><a class="video" href="https://www.youtube.com/v/zeBgP31KaqY?hd=1&autoplay=1&autohide=1&showinfo=0&rel=0&wmode=transparent"><i class="fa fa-info-circle"></i>
+        {% trans "Intro" %}</a></li>
+    <li><a class="video" href="https://www.youtube.com/v/a0mO143FfUI?hd=1&autoplay=1&autohide=1&showinfo=0&rel=0&wmode=transparent">
+        <i class="fa fa-question-circle"></i> {% trans "Help" %}</a></li>
+    {% else %}
+    <li><a href="http://player.youku.com/player.php/sid/XMTQyMTEyMjk3Mg/v.swf">{% trans "Intro" %}</a></li>
+    <li><a href="http://player.youku.com/player.php/sid/XMTQyMTEyMjk3Mg/v.swf" target="_blank">{% trans "Video" %}</a></li>
+    {% endif %}
+</ul>
+</li>

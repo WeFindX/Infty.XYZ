@@ -1,0 +1,71 @@
+{% load i18n %}
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="{% url "home" %}"><span class='brand'>{% trans "Solving Problems" %}</span><!--<span class="infin">&infin;</span><span class='ity'>.xyz</span>--></a>
+        </div>
+
+        <div class="collapse navbar-collapse">
+            <form class="navbar-form navbar-right" action="{% url 'set_language' %}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input class="form-control" name="next" type="hidden" value="{{ redirect_to }}" />
+                    <select class="form-control" onchange="$(this).closest('form').submit();" name="language">
+                        {% get_language_info_list for LANGUAGES as languages %}
+                        {% for language in languages %}
+                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+                        {{ language.name_local }} ({{ language.code }})
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </form>
+
+
+
+            <ul class="nav navbar-nav">
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <form action="{% url "home" %}" id="search-form" class="navbar-form navbar-right" method="get">
+                    <input class="form-control" id="id_s" placeholder="Find what you need..." name="s" type="text">
+                    <button type="submit" form="search-form" class="btn btn-primary" value="Search"><i class="fa fa-search"></i></button>
+                </form>
+                {% if request.get_full_path == "/dev/" %}
+                <!-- <li><a href="{% url "data" %}" class="btn-lg" style="color: white; background-color: grey;">{% trans "Open Data" %}</a></li>-->
+                {% elif request.get_full_path == "/data/" %}
+                <li><a href="{% url "dev" %}" class="btn-lg" style="color: white; background-color: grey;">{% trans "Open Source" %}</a></li>
+                {% else %}
+                {% endif %}
+
+                {% if request.user.is_authenticated %}
+                <!--
+              <li>
+              <a href="{% url "user-detail" request.user.username %}"><span id="credit">{{ request.user.get_comment_credit|floatformat:1 }}</span> <b>ħ</b></a>
+              </li>
+              <li>
+              <a href="{% url "payments:transaction_paypal_list_view" %}"><span id="credit">{{ request.user.get_matched_hours|floatformat:2 }}</span> <b>ḥ</b></a>
+              </li>
+              -->
+                {% include "account/includes/_user_menu.html" %}
+                {% else %}
+                <li>
+                <a href="{% url "about" %}"><b>{% trans "About" %}</b></a>
+                </li>
+
+                <li>
+                <a href="{% url "account_login" %}"><b>{% trans "Sign in" %}</b></a>
+                </li>
+
+                {% endif %}
+            </ul>
+        </div><!--/.nav-collapse -->
+
+    </div>
+</div>

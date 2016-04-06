@@ -3,10 +3,10 @@
 {% load crispy_forms_tags %}
 {% load django_markdown %}
 
-{% block title %}{% trans "Plans" %}{% endblock title %}
+{% block title %}{% trans "Projects" %}{% endblock title %}
 
 {% block content %}
-<h1>{% trans "Plans" %} <a href="{% url "plan-create" %}"><i class="fa fa-plus-circle"></a></i></h1>
+<h1>{% trans "Projects" %} <a href="{% url "plan-create" %}"><i class="fa fa-plus-circle"></a></i></h1>
 
 <div class="search-block" style="text-align: center;">
 {% crispy filter.form %}

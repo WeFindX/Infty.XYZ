@@ -13,6 +13,9 @@ shell:
 runserver:
 	.env/bin/python src/manage.py runserver --settings=conf.local
 
+test:
+	.env/bin/python src/manage.py test --settings=conf.test
+
 wsgi:
 	uwsgi\
 		--http 127.0.0.1:8000\

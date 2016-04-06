@@ -2,7 +2,8 @@ from django.utils.translation import ugettext_lazy as _
 from django import forms
 
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit, Layout, Field, Div, Button
+from crispy_forms.layout import Submit, Layout, Field, Div, Button, Fieldset
+from crispy_forms.bootstrap import FieldWithButtons, StrictButton
 from django.core.urlresolvers import reverse
 
 
@@ -26,6 +27,21 @@ from django_markdown.widgets import MarkdownWidget
 from decimal import Decimal
 from core.models import Translation
 from users.models import User
+
+
+
+class SearchForm(forms.Form):
+    s = forms.CharField(required=False, label=_("Search"))
+
+    def __init__(self, *args, **kwargs):
+        self.helper = FormHelper()
+        self.helper.layout = Layout(
+            FieldWithButtons('s', Submit('submit', 'Submit', css_class='button white'))
+        )
+        self.helper.form_method = "GET"
+        self.helper.form_action = "/"
+
+        super(SearchForm, self).__init__(*args, **kwargs)
 
 
 class ChangePriorityForm(forms.Form):

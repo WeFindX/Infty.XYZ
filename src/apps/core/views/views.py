@@ -18,6 +18,7 @@ from hours.models import HourValue
 from core.models import Language
 
 from ..forms import ContentTypeSubscribeForm
+from ..forms import SearchForm
 from ..models import Translation
 from ..models import Need
 from ..models import Goal
@@ -134,10 +135,10 @@ class IndexView(TemplateView):
             if self.request.session.get('%s_number' % key):
                 items[key] = self.request.session['%s_number' % key]
 
-        # Basic search by name in original language
-        if 's' in self.request.GET:
-            s = self.request.GET['s']
-            q_search = Q(name__icontains=s)
+        search_form = SearchForm(self.request.GET or None)
+        if search_form.is_valid():
+            search_query = search_form.cleaned_data.get('s')
+            q_search = Q(name__icontains=search_query)
         else:
             q_search = Q()
 
@@ -201,6 +202,7 @@ class IndexView(TemplateView):
 			'hour_value': hour_value,
             'dropdown_list': self.dropdown_list,
             'items': items,
+            'search_form': search_form
         }
 
         context.update(instances_list)

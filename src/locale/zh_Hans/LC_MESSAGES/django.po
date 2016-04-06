@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-22 18:05-0700\n"
-"PO-Revision-Date: 2016-03-23 03:07+0200\n"
+"POT-Creation-Date: 2016-03-23 09:32-0700\n"
+"PO-Revision-Date: 2016-03-23 18:34+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -568,7 +568,7 @@ msgstr "在太空中航行的工具"
 #: src/apps/core/templates/idea/detail.html:160
 #: src/apps/core/templates/need/detail.html:142
 #: src/apps/core/templates/plan/detail.html:524
-#: src/apps/core/templates/step/detail.html:148
+#: src/apps/core/templates/step/detail.html:152
 #: src/apps/core/templates/task/detail.html:124
 #: src/apps/core/templates/work/detail.html:144 src/templates/home.html:244
 #: src/templates/home.html.py:331 src/templates/home.html:440
@@ -580,7 +580,7 @@ msgstr "链接"
 #: src/apps/core/templates/idea/detail.html:172
 #: src/apps/core/templates/need/detail.html:154
 #: src/apps/core/templates/plan/detail.html:550
-#: src/apps/core/templates/step/detail.html:160
+#: src/apps/core/templates/step/detail.html:164
 #: src/apps/core/templates/task/detail.html:136
 #: src/apps/core/templates/work/detail.html:156 src/templates/home.html:363
 #: src/templates/home.html.py:467
@@ -601,7 +601,7 @@ msgstr "需要"
 #: src/apps/core/templates/idea/detail.html:173
 #: src/apps/core/templates/need/detail.html:155
 #: src/apps/core/templates/plan/detail.html:551
-#: src/apps/core/templates/step/detail.html:161
+#: src/apps/core/templates/step/detail.html:165
 #: src/apps/core/templates/task/detail.html:137
 #: src/apps/core/templates/work/detail.html:157
 msgid "Request access:"
@@ -740,9 +740,7 @@ msgstr "来自 "
 msgid "shared with:"
 msgstr "谁可见:"
 
-#: src/apps/core/templates/goal/detail.html:146
-#: src/apps/core/templates/idea/list2.html:6
-#: src/apps/core/templates/idea/list2.html:9 src/templates/home.html.py:295
+#: src/apps/core/templates/goal/detail.html:146 src/templates/home.html:295
 msgid "Ideas"
 msgstr "思路"
 
@@ -757,9 +755,8 @@ msgstr "+新的思路"
 
 #: src/apps/core/templates/goal/list2.html:6
 #: src/apps/core/templates/goal/list2.html:9
-#: src/apps/core/templates/need/detail.html:135 src/templates/home.html:212
-msgid "Goals"
-msgstr "目标"
+msgid "Problems"
+msgstr "问题"
 
 #: src/apps/core/templates/goal/update.html:14
 #: src/apps/core/templates/idea/update.html:15
@@ -822,9 +819,7 @@ msgstr "需要:"
 msgid "goal"
 msgstr ""
 
-#: src/apps/core/templates/idea/detail.html:154
-#: src/apps/core/templates/plan/list2.html:6
-#: src/apps/core/templates/plan/list2.html:9 src/templates/home.html.py:404
+#: src/apps/core/templates/idea/detail.html:154 src/templates/home.html:404
 msgid "Plans"
 msgstr "计划"
 
@@ -837,6 +832,11 @@ msgstr ""
 msgid "+New Plan"
 msgstr "+新的计划"
 
+#: src/apps/core/templates/idea/list2.html:6
+#: src/apps/core/templates/idea/list2.html:9
+msgid "Solutions"
+msgstr "解决方案"
+
 #: src/apps/core/templates/need/create.html:32
 msgid "Letter"
 msgstr "信"
@@ -844,6 +844,10 @@ msgstr "信"
 #: src/apps/core/templates/need/create.html:36
 msgid "Write a public letter to society, or a personal one to friends."
 msgstr "写一封公开信给社会，或个私人信给朋友。"
+
+#: src/apps/core/templates/need/detail.html:135 src/templates/home.html:212
+msgid "Goals"
+msgstr "目标"
 
 #: src/apps/core/templates/need/detail.html:164
 msgid "+Add Goal"
@@ -935,7 +939,12 @@ msgstr ""
 msgid "+New Step"
 msgstr "+新的步骤"
 
-#: src/apps/core/templates/step/detail.html:160
+#: src/apps/core/templates/plan/list2.html:6
+#: src/apps/core/templates/plan/list2.html:9
+msgid "Projects"
+msgstr "项目"
+
+#: src/apps/core/templates/step/detail.html:164
 #: src/apps/core/templates/work/detail.html:55
 msgid "task"
 msgstr ""

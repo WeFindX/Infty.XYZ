@@ -3,11 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#: src/apps/core/forms.py:375 src/apps/core/forms.py:378
+#: src/apps/core/forms.py:1131
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-22 18:05-0700\n"
+"POT-Creation-Date: 2016-03-23 09:32-0700\n"
 "PO-Revision-Date: 2016-03-23 03:09+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -574,7 +576,7 @@ msgstr "宇宙空間に打ち上げられ，長時間人間を乗せて運航す
 #: src/apps/core/templates/idea/detail.html:160
 #: src/apps/core/templates/need/detail.html:142
 #: src/apps/core/templates/plan/detail.html:524
-#: src/apps/core/templates/step/detail.html:148
+#: src/apps/core/templates/step/detail.html:152
 #: src/apps/core/templates/task/detail.html:124
 #: src/apps/core/templates/work/detail.html:144 src/templates/home.html:244
 #: src/templates/home.html.py:331 src/templates/home.html:440
@@ -586,7 +588,7 @@ msgstr "リンク"
 #: src/apps/core/templates/idea/detail.html:172
 #: src/apps/core/templates/need/detail.html:154
 #: src/apps/core/templates/plan/detail.html:550
-#: src/apps/core/templates/step/detail.html:160
+#: src/apps/core/templates/step/detail.html:164
 #: src/apps/core/templates/task/detail.html:136
 #: src/apps/core/templates/work/detail.html:156 src/templates/home.html:363
 #: src/templates/home.html.py:467
@@ -605,7 +607,7 @@ msgstr ""
 #: src/apps/core/templates/idea/detail.html:173
 #: src/apps/core/templates/need/detail.html:155
 #: src/apps/core/templates/plan/detail.html:551
-#: src/apps/core/templates/step/detail.html:161
+#: src/apps/core/templates/step/detail.html:165
 #: src/apps/core/templates/task/detail.html:137
 #: src/apps/core/templates/work/detail.html:157
 msgid "Request access:"
@@ -743,9 +745,7 @@ msgstr "ソース "
 msgid "shared with:"
 msgstr ""
 
-#: src/apps/core/templates/goal/detail.html:146
-#: src/apps/core/templates/idea/list2.html:6
-#: src/apps/core/templates/idea/list2.html:9 src/templates/home.html.py:295
+#: src/apps/core/templates/goal/detail.html:146 src/templates/home.html:295
 msgid "Ideas"
 msgstr "発想"
 
@@ -760,9 +760,10 @@ msgstr "+新規発想"
 
 #: src/apps/core/templates/goal/list2.html:6
 #: src/apps/core/templates/goal/list2.html:9
-#: src/apps/core/templates/need/detail.html:135 src/templates/home.html:212
-msgid "Goals"
-msgstr "目的"
+#, fuzzy
+#| msgid "Problem"
+msgid "Problems"
+msgstr "問題"
 
 #: src/apps/core/templates/goal/update.html:14
 #: src/apps/core/templates/idea/update.html:15
@@ -825,9 +826,7 @@ msgstr ""
 msgid "goal"
 msgstr ""
 
-#: src/apps/core/templates/idea/detail.html:154
-#: src/apps/core/templates/plan/list2.html:6
-#: src/apps/core/templates/plan/list2.html:9 src/templates/home.html.py:404
+#: src/apps/core/templates/idea/detail.html:154 src/templates/home.html:404
 msgid "Plans"
 msgstr "企画"
 
@@ -840,6 +839,13 @@ msgstr ""
 msgid "+New Plan"
 msgstr "+新規企画"
 
+#: src/apps/core/templates/idea/list2.html:6
+#: src/apps/core/templates/idea/list2.html:9
+#, fuzzy
+#| msgid "Solution"
+msgid "Solutions"
+msgstr "解決提案"
+
 #: src/apps/core/templates/need/create.html:32
 msgid "Letter"
 msgstr "手紙"
@@ -847,6 +853,10 @@ msgstr "手紙"
 #: src/apps/core/templates/need/create.html:36
 msgid "Write a public letter to society, or a personal one to friends."
 msgstr ""
+
+#: src/apps/core/templates/need/detail.html:135 src/templates/home.html:212
+msgid "Goals"
+msgstr "目的"
 
 #: src/apps/core/templates/need/detail.html:164
 msgid "+Add Goal"
@@ -938,7 +948,14 @@ msgstr ""
 msgid "+New Step"
 msgstr "+新規段階"
 
-#: src/apps/core/templates/step/detail.html:160
+#: src/apps/core/templates/plan/list2.html:6
+#: src/apps/core/templates/plan/list2.html:9
+#, fuzzy
+#| msgid "Project"
+msgid "Projects"
+msgstr "企画"
+
+#: src/apps/core/templates/step/detail.html:164
 #: src/apps/core/templates/work/detail.html:55
 msgid "task"
 msgstr ""

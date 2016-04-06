@@ -178,8 +178,9 @@ table.table.centered
     border-width: 0px 1px 1px 1px;
     border-radius: 0px;
 }
-.input-comment{
+.input-comment {
     display: inline-block;
+    width: 100%;
 }
 .top-space{
     padding-top: 25px;
@@ -349,4 +350,8 @@ a:visited{
 .translation {
     color:#36648b;
     margin-bottom: 7px;
+}
+
+.container {
+    width: 100%;
 }

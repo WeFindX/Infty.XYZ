@@ -5,16 +5,13 @@
 {% load django_markdown %}
 {% load country_isocode %}
 
+{% load crispy_forms_tags %}
+
 {% block title %}Index{% endblock %}
 
 {% block page_title %}Index{% endblock page_title %}
 
 {% block content %}
-<style>
-    .container {
-    width: 100%;
-}
-</style>
 
 <!-- for pop-up video -->
 <script type="text/javascript" src="{% static "jquery-migrate/jquery-migrate.min.js" %}"></script>
@@ -34,71 +31,6 @@
     }
 </script>
 
-
-<div class="alignright">
-{% if not user.is_anonymous %}
-    <!--
-    <span id="info" style="display:none; color: brown;">
-    <b>
-        [<a href="{% url "invite:send"  %}">{{user.invitationoption.invitations_left}} {% trans "invitations" %}</a>, <a href="/step/2/detail/">{% trans "write bugs" %}</a>, {% trans "time value" %}: 1 ħ = <a href="https://research.stlouisfed.org/fred2/series/CES0500000003">{{ hour_value.value|floatformat:2 }}</a> $]
-    </b>
-    </span>
-    <a class="btn-lg" style="color: black; background-color: #F0F0F0;" href="javascript:hideshow(document.getElementById('info'))">{{user.invitationoption.invitations_left}} <i class="fa fa-envelope-o"></i> {% trans "invite a friend" %}</a>
-	-->
-	<a class="btn-lg" style="color: black; background-color: #F0F0F0;" href="{% url "invite:send" %}">{{user.invitationoption.invitations_left}} <i class="fa fa-envelope-o"></i> {% trans "invite a friend" %}</a>
-
-    {% if request|get_country_by_ip != 'CN' %}
-    <a class="video btn-lg" style="color: black; background-color: #F0F0F0;" href="https://www.youtube.com/v/zeBgP31KaqY?hd=1&autoplay=1&autohide=1&showinfo=0&rel=0&wmode=transparent">{% trans "Intro" %}</a>
-    <a class="video btn-lg" style="color: black; background-color: #F0F0F0;" href="https://www.youtube.com/v/a0mO143FfUI?hd=1&autoplay=1&autohide=1&showinfo=0&rel=0&wmode=transparent">{% trans "Help" %}</a>
-    <br/>
-    {% else %}
-    <a class="btn-lg" style="color: black; background-color: #F0F0F0;" href="http://player.youku.com/player.php/sid/XMTQyMTEyMjk3Mg/v.swf">{% trans "Intro" %}</a>
-    <a class="btn-lg" style="color: black; background-color: #F0F0F0;" href="http://player.youku.com/player.php/sid/XMTQyMTEyMjk3Mg/v.swf" target="_blank">{% trans "Video" %}</a>
-    {% endif %}
-
-{% else %}
-
-{% if request|get_country_by_ip != 'CN' %}
-<a class="video btn-lg" style="color: black; background-color: #F0F0F0;" href="https://www.youtube.com/v/zeBgP31KaqY?hd=1&autoplay=1&autohide=1&showinfo=0&rel=0&wmode=transparent">{% trans "Video" %}</a>
-<br/>
-{% else %}
-<a class="btn-lg" style="color: black; background-color: #F0F0F0;" href="http://player.youku.com/player.php/sid/XMTQyMTEyMjk3Mg/v.swf" target="_blank">{% trans "Video" %}</a>
-{% endif %}
-
-{% endif %}
-</div>
-
-<div class="alignleft">
-
-	<div class="btn-group" style="position: relative; height:10px; bottom:24px;">
-	  <button type="button" class="btn-lg btn" style='font-weight: normal; text-transform: none; color: white; background-color: black; font-size: 18px; font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif' onclick="window.location.href={% url 'goal-create' %}">{% trans "compose" %}</button>
-	  <button type="button" class="btn-lg btn dropdown-toggle" style="color: white; background-color: grey;" data-toggle="dropdown">
-		<span class="caret"></span>
-	  </button>
-	  <ul class="dropdown-menu" role="menu">
-		  <li><a href="{% url 'goal-create' %}">{% trans "Problem" %}</a></li>
-		  <li><a href="{% url 'idea-create' %}">{% trans "Solution" %}</a></li>
-		  <li><a href="{% url 'plan-create' %}">{% trans "Project" %}</a></li>
-	  </ul>
-
-      <form action="{{request.get_full_path}}" method="get" style="display: inline; margin-left:10px;">
-      <input name="s" autocomplete="off" class="btn-lg" tabindex="-1" type="text" aria-hidden="true" size="35" style="display: inline; height: 49px; font-weight: normal; text-transform: none; color: white; background-color: #c0c0c0;font-size: 18px; font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif"><input class="btn-lg" type="submit" value="🔍" style="margin-left: 5px; margin-bottom: 1px; height: 49px; color: GrayText; border:none;">
-      </form>
-      <!--
-      <div style="display: inline; margin-left:10px;">
-          <button type="submit" id="ithink" class="btn-lg" style="margin-left: 5px; margin-bottom: 1px; height: 49px; color: GrayText; border:none;">
-              <i class="fa fa-bug"></i>
-          </button>
-          <button type="submit" id="ichart" class="btn-lg" style="margin-left: 5px; margin-bottom: 1px; height: 49px; color: GrayText; border:none;">
-              <i class="fa fa-paper-plane"></i>
-          </button>
-          <button type="submit" id="icreate" class="btn-lg" style="margin-left: 5px; margin-bottom: 1px; height: 49px; color: GrayText; border:none;">
-              <i class="fa fa-rocket"></i>
-          </button>
-      </div>
-	  -->
-	</div>
-</div>
 <style>
 #ithink:hover {
     text-shadow: 0 0 25px #F6358A;
