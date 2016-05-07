@@ -148,10 +148,10 @@ table.table.centered
 
 .brand {
     position: relative;
-    padding-left: 20px;
+    padding-left: 0px;
     font-size: 24px;
-    transform:scale(1.2,1);
-    -webkit-transform:scale(1.2,1);
+    transform:scale(1.0,1);
+    -webkit-transform:scale(1.0,1);
     display:inline-block;
 }
 
